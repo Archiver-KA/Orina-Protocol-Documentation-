@@ -8,6 +8,8 @@ source_audit_dates: Contracts 2026-05-16; runtime 2026-05-14
 
 This page summarizes the public security posture for Orina Protocol based on the local contract and runtime documentation reviewed on 2026-05-27.
 
+For the public summary of internal review scope, findings, remediation status, and verification references, see [Internal Audit Summary](./internal-audit-summary.md).
+
 ## Contract Audit Summary
 
 The source contract audit dated 2026-05-16 reviewed:

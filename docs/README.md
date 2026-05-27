@@ -14,6 +14,7 @@ This hub organizes the public Orina Protocol documentation set.
 - [Runtime App](./runtime/live-app.md)
 - [Runtime Overview](./runtime/overview.md)
 - [Security Model](./security/security-model.md)
+- [Internal Audit Summary](./security/internal-audit-summary.md)
 - [Official Links](./reference/official-links.md)
 - [Glossary](./reference/glossary.md)
 
@@ -34,8 +35,9 @@ This hub organizes the public Orina Protocol documentation set.
 - [Runtime Overview](./runtime/overview.md)
 - [Runtime User Guide](./runtime/user-guide.md)
 
-## Assurance And Formal Material
+## Security, Assurance, And Formal Material
 
+- [Internal Audit Summary](./security/internal-audit-summary.md)
 - [Security Model](./security/security-model.md)
 - [Formal Verification](./formal/formal-verification.md)
 - [Formal Bytecode](./formal/bytecode.md)

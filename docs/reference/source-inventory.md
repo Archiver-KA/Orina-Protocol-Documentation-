@@ -63,6 +63,7 @@ Public material used:
 - `docs/release-provenance.md`
 - `package.json`
 - Current ATP v3.4.1 runtime verification notes
+- Runtime internal audit report
 
 Material excluded from public docs:
 

@@ -50,6 +50,7 @@ AI and automation may assist sourcing, evaluation, and execution, but they do no
 | Runtime | [Runtime Overview](./docs/runtime/overview.md) |
 | Live runtime app | [Runtime App](./docs/runtime/live-app.md) |
 | Security | [Security Model](./docs/security/security-model.md) |
+| Internal audit | [Internal Audit Summary](./docs/security/internal-audit-summary.md) |
 | Formal methods | [Formal Verification](./docs/formal/formal-verification.md) |
 | Bytecode | [Formal Bytecode](./docs/formal/bytecode.md) |
 | Glossary | [Glossary](./docs/reference/glossary.md) |
@@ -64,6 +65,12 @@ Curated ATP formal artifacts are stored under [artifacts/formal/atp](./artifacts
 - `MarketplaceATP` creation and runtime bytecode exports.
 
 The bytecode files are documented with SHA-256 hashes in [Formal Bytecode](./docs/formal/bytecode.md).
+
+## Security And Audit
+
+The ATP contract system and runtime application have completed internal security review passes. See [Internal Audit Summary](./docs/security/internal-audit-summary.md) for scope, results, verification references, and limitations.
+
+This is an internal audit summary, not an external audit certificate.
 
 ## Public Scope
 
