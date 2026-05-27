@@ -11,6 +11,7 @@ This hub organizes the public Orina Protocol documentation set.
 
 - [Project Profile](./project/profile.md)
 - [Protocol Overview](./protocol/overview.md)
+- [Runtime App](./runtime/live-app.md)
 - [Runtime Overview](./runtime/overview.md)
 - [Security Model](./security/security-model.md)
 - [Official Links](./reference/official-links.md)
@@ -29,6 +30,7 @@ This hub organizes the public Orina Protocol documentation set.
 
 ## Runtime
 
+- [Runtime App](./runtime/live-app.md)
 - [Runtime Overview](./runtime/overview.md)
 - [Runtime User Guide](./runtime/user-guide.md)
 

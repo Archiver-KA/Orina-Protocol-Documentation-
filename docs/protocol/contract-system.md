@@ -3,7 +3,7 @@
 ---
 date: 2026-05-27
 status: Public documentation baseline
-source_baseline: Foundry workspace commit be466831ff367a7891b32b61e6541dc294b2f066
+source_baseline: Public ATP v3.4 runtime contract documentation
 ---
 
 The ATP contract system is implemented in Solidity `0.8.24` using Foundry. The local `foundry.toml` enables optimizer runs `200`, `via_ir = true`, and `evm_version = "cancun"`.
@@ -13,8 +13,8 @@ The ATP contract system is implemented in Solidity `0.8.24` using Foundry. The l
 | Contract | Version | Responsibility |
 | --- | --- | --- |
 | `MarketplaceATP` | `3.4` | Order state machine, EIP-712 order domain, direct and delegated order actions. |
-| `PaymentGateway` | `3.5` | ERC-20 escrow, seller release, buyer refund, platform/DAO/referral fee distribution. |
-| `FeeManager` | `3.5` | Fee schedules and token-specific fee presets. |
+| `PaymentGateway` | `3.4` | ERC-20 escrow, seller release, buyer refund, and fee distribution. |
+| `FeeManager` | `3.4` | Fee schedules and token-specific fee presets. |
 | `OrinaRWA` | `3.4` | Seller asset ledger, minting, locking, consumption, and unlock paths. |
 | `RWAReceiptNFT` | `3.4-rwa-receipt` | Non-transferable receipt NFT for finalized RWA settlement. |
 | `DisputeManager` | `3.4` | Dispute lifecycle, arbiter verdicts, mutual agreement, stale resolution. |
@@ -69,7 +69,7 @@ Timing constants:
 
 ## Payment And Fees
 
-`PaymentGateway` holds escrowed ERC-20 tokens and routes funds according to marketplace decisions. `FeeManager` calculates platform, DAO, and referral fees. The current v3.5 source candidate removes protocol burn fee distribution from order snapshots, fee calculation, settlement, and deployment wiring.
+`PaymentGateway` holds escrowed ERC-20 tokens and routes funds according to marketplace decisions. `FeeManager` calculates runtime fee schedules and token-specific fee presets.
 
 Fee constraints from source:
 

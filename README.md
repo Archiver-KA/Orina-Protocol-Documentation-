@@ -19,6 +19,7 @@ AI and automation may assist sourcing, evaluation, and execution, but they do no
 | Channel | Link |
 | --- | --- |
 | Website | https://www.orina.io/ |
+| Runtime app | https://app.orina.io/ |
 | Blog | https://orina.io/blog |
 | Whitepaper | https://whitepaper.orina.io/ |
 | X / Twitter | https://x.com/Orina_io |
@@ -47,6 +48,7 @@ AI and automation may assist sourcing, evaluation, and execution, but they do no
 | Order lifecycle | [Order Lifecycle](./docs/protocol/order-lifecycle.md) |
 | M2M delegation | [M2M Delegation](./docs/protocol/m2m-delegation.md) |
 | Runtime | [Runtime Overview](./docs/runtime/overview.md) |
+| Live runtime app | [Runtime App](./docs/runtime/live-app.md) |
 | Security | [Security Model](./docs/security/security-model.md) |
 | Formal methods | [Formal Verification](./docs/formal/formal-verification.md) |
 | Bytecode | [Formal Bytecode](./docs/formal/bytecode.md) |
@@ -69,6 +71,7 @@ Included:
 
 - Project profile and official social links.
 - Basic protocol and runtime documentation.
+- Public runtime app reference for ATP v3.4.1.
 - Contract responsibilities and invariants.
 - Public security posture and verification summaries.
 - Formal model/specification references.
@@ -76,9 +79,10 @@ Included:
 
 Excluded:
 
-- Deployment runbooks and cutover checklists.
+- Deployment runbooks and operator checklists.
 - Production environment flip plans.
 - Internal planning documents.
+- Future runtime migration material.
 - Operator-only verification scripts and smoke-test procedures.
 - `.env`, secrets, keys, logs, caches, `node_modules`, and build output.
 - Internal backlog, local archive, and owner-decision workflow notes.

@@ -6,7 +6,7 @@ status: Public documentation baseline
 source_artifact_date: 2026-05-18
 ---
 
-The ATP formal artifact set provides model and specification inputs for the current Foundry source candidate after v3.5 fee/delegation hardening.
+The ATP formal artifact set provides public model and specification inputs for ATP lifecycle and delegated authority verification.
 
 ## Artifact Set
 

@@ -84,7 +84,7 @@ The runtime source documentation did not define a dedicated public vulnerability
 This page intentionally omits:
 
 - Private deployment runbooks.
-- Production cutover steps.
+- Production migration steps.
 - CI secret names and values.
 - Local audit database URLs.
 - Operator-only smoke-test instructions.

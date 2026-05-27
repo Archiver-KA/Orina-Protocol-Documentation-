@@ -27,4 +27,4 @@ This folder contains the curated public ATP formal artifact bundle copied from t
 
 ## Scope
 
-These artifacts document ATP lifecycle and delegated authority checks for the current source candidate. They do not include deployment runbooks, RPC configuration, private keys, or operator-only execution procedures.
+These artifacts document ATP lifecycle and delegated authority checks for the public documentation bundle. They do not include deployment runbooks, RPC configuration, private keys, or operator-only execution procedures.

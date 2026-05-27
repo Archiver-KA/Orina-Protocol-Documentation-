@@ -8,6 +8,10 @@ source_baseline: Summarized from runtime user guide and FAQ
 
 This guide describes the user-facing Orina Protocol Runtime experience at a high level.
 
+Public app:
+
+- https://app.orina.io/
+
 ## Browsing
 
 Guest users can view public marketplace and community surfaces without connecting a wallet:

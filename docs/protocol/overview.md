@@ -3,22 +3,14 @@
 ---
 date: 2026-05-27
 status: Public documentation baseline
-source_baseline: ATP v3.5 source candidate; MarketplaceATP EIP-712 version 3.4
+source_baseline: Public ATP v3.4 runtime and contract documentation
 ---
 
 Orina ATP is an escrowed bilateral transaction protocol for real-world asset marketplace flows. The protocol coordinates asset inventory, buyer payment escrow, seller confirmation, delivery timing, dispute settlement, receipt minting, fee distribution, and optional delegated machine-to-machine execution.
 
-## Current Source Candidate
+## Current Public Runtime
 
-The local contract source is labeled `ATP v3.5` for fee and delegation hardening. The `MarketplaceATP.VERSION` constant remains `3.4` because it is part of the EIP-712 order signing domain used by existing signing code. `FeeManager.VERSION` and `PaymentGateway.VERSION` are `3.5`.
-
-Key v3.5 source-candidate changes:
-
-- Protocol burn fee removed from settlement.
-- Payment and fee routing now use platform, DAO, and referral fee components only.
-- Delegated M2M actions bind payment token, asset id, amount, gross price, counterparty, and delivery bounds.
-- No-expiry delegated sessions are limited by counterparty binding and root revocation.
-- Buyer dispute and auto-release boundary ambiguity was corrected by requiring auto-release after the buyer action boundary.
+The current public runtime reference is ATP v3.4.1 on BSC Testnet. The primary EIP-712 order domain uses `MarketplaceATP` version `3.4`, and the public runtime app is documented in [Runtime App](../runtime/live-app.md).
 
 ## Main Protocol Roles
 
@@ -69,4 +61,4 @@ Key v3.5 source-candidate changes:
 
 ## Public Documentation Boundaries
 
-This public overview describes protocol behavior and assurance posture. It does not publish operator runbooks, deployment checklists, private environment variables, or production cutover procedures.
+This public overview describes protocol behavior and assurance posture. It does not publish operator runbooks, deployment checklists, private environment variables, or internal migration procedures.

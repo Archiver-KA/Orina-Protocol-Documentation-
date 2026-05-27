@@ -12,7 +12,7 @@ This repository is a curated public documentation repository. Contributions shou
 - Add `date: YYYY-MM-DD` metadata to every Markdown file.
 - Keep language precise and source-backed.
 - Do not add `.env` files, credentials, private RPC URLs, service-role keys, JWT secrets, generated API keys, local logs, or screenshots containing sensitive data.
-- Do not copy deployment runbooks, cutover checklists, production environment flip steps, or operator-only smoke-test procedures into this public repo.
+- Do not copy deployment runbooks, operator checklists, production environment flip steps, or operator-only smoke-test procedures into this public repo.
 - When adding formal or bytecode artifacts, include byte length, source date, source commit, and SHA-256 hash.
 - Prefer concise public summaries over verbatim copies of internal working notes.
 

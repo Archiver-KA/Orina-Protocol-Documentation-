@@ -62,6 +62,7 @@ Public material used:
 - `docs/order-state-semantics.md`
 - `docs/release-provenance.md`
 - `package.json`
+- Current ATP v3.4.1 runtime verification notes
 
 Material excluded from public docs:
 
@@ -77,6 +78,7 @@ Material excluded from public docs:
 - governance owner-decision documents
 - port-specific operator verification guides
 - Supabase migration drift and production deployment procedures
+- future runtime migration material
 
 ### Project Profile And Whitepaper Sources
 
