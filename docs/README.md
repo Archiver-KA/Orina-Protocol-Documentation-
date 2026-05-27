@@ -9,10 +9,17 @@ This hub organizes the public Orina Protocol documentation set.
 
 ## Start Here
 
+- [Project Profile](./project/profile.md)
 - [Protocol Overview](./protocol/overview.md)
 - [Runtime Overview](./runtime/overview.md)
 - [Security Model](./security/security-model.md)
+- [Official Links](./reference/official-links.md)
 - [Glossary](./reference/glossary.md)
+
+## Project
+
+- [Project Profile](./project/profile.md)
+- [Official Links](./reference/official-links.md)
 
 ## Protocol
 

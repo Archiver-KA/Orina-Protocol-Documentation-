@@ -9,7 +9,6 @@ status: Public curation manifest
 
 ### ATP Contracts
 
-- Local path: `C:\ORINA\ATPProtocol2\ATP2\foundry`
 - Git branch: `main`
 - Git commit: `be466831ff367a7891b32b61e6541dc294b2f066`
 - Remotes:
@@ -47,7 +46,6 @@ Material excluded from public docs:
 
 ### Runtime Application
 
-- Local path: `C:\ORINA\ATPProtocol2\Orina Protocol - Runtime`
 - Git branch: `main`
 - Git commit: `67a69e7b37ccd38dc35d005355eccc9f9bf89ff0`
 - Remotes:
@@ -80,6 +78,30 @@ Material excluded from public docs:
 - port-specific operator verification guides
 - Supabase migration drift and production deployment procedures
 
+### Project Profile And Whitepaper Sources
+
+Whitepaper repository:
+
+- Git commit: `6bdf0fded32dbbc84187723a22daa93120a1baea`
+- Remote:
+  - `origin`: `https://github.com/Archiver-KA/WhitepaperOrinaio.git`
+
+Public material used:
+
+- `ORINA_WHITEPAPER_v2.md`
+
+Additional owner-provided project profile sources:
+
+- `SocialNetwork.md`
+- `Orina_Protocol_Spec.md`
+
+Material excluded from public docs:
+
+- Content prompt packs.
+- Internal editorial prompts.
+- Confidential labels and internal source paths.
+- Investor-only or owner-decision planning notes.
+
 ## Artifact Manifest
 
 | Artifact | Bytes | SHA-256 |
@@ -90,7 +112,4 @@ Material excluded from public docs:
 | `artifacts/formal/atp/evm/MarketplaceATP.runtime.bytecode.hex` | 48964 | `B3D45B8AF0973E63F4C008B37C681EDA6D269F654C740A5C50D34D4B368029B4` |
 | `artifacts/formal/atp/ltl/MarketplaceATP_LTL.spec` | 2025 | `EB1FCF22181410D6A0922A60C7C5143714CCA59A9D8BF3E09198304E3910F221` |
 | `artifacts/formal/atp/nusmv/MarketplaceATP_ExecutableModel.smv` | 9741 | `2E5F97BE18533A9FB69E20AEF4CF240FEA5FDA3F759627960068818E491C4F04` |
-
-## Notes
-
-The source Foundry workspace contains a malformed `.gitignore` glob in the parent path that can make `rg` emit parsing warnings unless run with `--no-ignore`. The public documentation repository does not copy that ignore file.
+| `assets/images/orina-banner-github.jpg` | 121528 | `8A057049E1D3058C36EEF94AA35021433EBD1FFA10BDB1386F4821924C385260` |

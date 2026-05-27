@@ -11,7 +11,6 @@ This page records the public bytecode artifacts copied from the local Foundry fo
 
 ## Source
 
-- Source repository: `C:\ORINA\ATPProtocol2\ATP2\foundry`
 - Source commit: `be466831ff367a7891b32b61e6541dc294b2f066`
 - Source files:
   - `formal/atp/evm/MarketplaceATP.creation.bytecode.hex`
