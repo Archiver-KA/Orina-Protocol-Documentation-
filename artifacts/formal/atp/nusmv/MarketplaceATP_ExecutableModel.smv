@@ -1,0 +1,279 @@
+MODULE main
+
+-- Executable abstraction of MarketplaceATP order lifecycle and delegated M2M timing.
+-- Focused on semantics validated against the current Solidity code:
+-- 1) canonical buyer/seller remain root identities
+-- 2) delegated createOrderFor may use a payer vault while refund routing stays root-bound
+-- 3) sellerConfirm has direct and delegated branches
+-- 4) root fallback remains available after delegate session expiry/revoke
+
+VAR
+  cmd : {
+    idle,
+    tick,
+    root_create,
+    delegated_create,
+    root_seller_confirm_same,
+    root_seller_confirm_change,
+    delegated_seller_confirm_same,
+    delegated_seller_confirm_change,
+    root_buyer_pay,
+    delegated_buyer_pay,
+    buyer_cancel,
+    autotime_cancel,
+    root_confirm_delivery,
+    autotime_auto_release,
+    root_open_dispute,
+    arbiter_full_release,
+    arbiter_full_refund,
+    arbiter_split,
+    delegate_expire,
+    delegate_revoke
+  };
+
+  state : {
+    empty,
+    pending_confirm,
+    paid,
+    disputed,
+    finalized_state,
+    cancelled_state
+  };
+
+  seller_confirmed : boolean;
+  delegate_session_live : boolean;
+  order_created_via_delegate : boolean;
+  payer_is_vault : boolean;
+  canonical_buyer_root : boolean;
+  canonical_seller_root : boolean;
+  refund_to_root : boolean;
+
+  -- Abstract timers (2 ticks = "window open", then decremented by cmd=tick)
+  seller_ticks : 0..2;
+  buyer_pay_ticks : 0..2;
+  delivery_ticks : 0..2;
+  dispute_ticks : 0..2;
+
+DEFINE
+  finalized := state = finalized_state | state = cancelled_state;
+  escrow_funded := state = pending_confirm | state = paid | state = disputed;
+  asset_locked := state = paid | state = disputed;
+
+  seller_window_open := state = pending_confirm & !seller_confirmed & seller_ticks > 0;
+  pay_deadline_active := state = pending_confirm & seller_confirmed;
+  buyer_pay_window_open := state = pending_confirm & seller_confirmed & buyer_pay_ticks > 0;
+  buyer_cancel_allowed := state = pending_confirm & seller_confirmed & buyer_pay_ticks > 0;
+  buyer_pay_timeout := state = pending_confirm & seller_confirmed & buyer_pay_ticks = 0;
+
+  delivery_window_open := state = paid & delivery_ticks > 0;
+  buyer_action_window_open := state = paid & dispute_ticks > 0;
+  auto_release_ready := state = paid & delivery_ticks = 0;
+  dispute_window_open := state = paid & delivery_ticks = 0 & dispute_ticks > 0;
+
+  autotime_cancel_allowed :=
+    state = pending_confirm &
+    (
+      (!seller_confirmed & seller_ticks = 0) |
+      (seller_confirmed & buyer_pay_ticks = 0)
+    );
+
+  root_pay_allowed :=
+    state = pending_confirm &
+    seller_confirmed &
+    buyer_pay_ticks > 0;
+
+  delegated_pay_allowed :=
+    root_pay_allowed &
+    delegate_session_live &
+    payer_is_vault;
+
+  root_fallback_available :=
+    root_pay_allowed &
+    !delegate_session_live &
+    canonical_buyer_root;
+
+  delegated_control_active :=
+    order_created_via_delegate &
+    delegate_session_live;
+
+ASSIGN
+  init(cmd) := idle;
+  init(state) := empty;
+  init(seller_confirmed) := FALSE;
+  init(delegate_session_live) := FALSE;
+  init(order_created_via_delegate) := FALSE;
+  init(payer_is_vault) := FALSE;
+  init(canonical_buyer_root) := FALSE;
+  init(canonical_seller_root) := FALSE;
+  init(refund_to_root) := FALSE;
+  init(seller_ticks) := 0;
+  init(buyer_pay_ticks) := 0;
+  init(delivery_ticks) := 0;
+  init(dispute_ticks) := 0;
+
+  next(cmd) := {
+    idle,
+    tick,
+    root_create,
+    delegated_create,
+    root_seller_confirm_same,
+    root_seller_confirm_change,
+    delegated_seller_confirm_same,
+    delegated_seller_confirm_change,
+    root_buyer_pay,
+    delegated_buyer_pay,
+    buyer_cancel,
+    autotime_cancel,
+    root_confirm_delivery,
+    autotime_auto_release,
+    root_open_dispute,
+    arbiter_full_release,
+    arbiter_full_refund,
+    arbiter_split,
+    delegate_expire,
+    delegate_revoke
+  };
+
+  next(state) := case
+    state = finalized_state : finalized_state;
+    state = cancelled_state : cancelled_state;
+
+    state = empty & (cmd = root_create | cmd = delegated_create) : pending_confirm;
+
+    state = pending_confirm & cmd = root_seller_confirm_same & seller_window_open : paid;
+    state = pending_confirm & cmd = root_seller_confirm_change & seller_window_open : pending_confirm;
+    state = pending_confirm & cmd = delegated_seller_confirm_same & seller_window_open & delegate_session_live : paid;
+    state = pending_confirm & cmd = delegated_seller_confirm_change & seller_window_open & delegate_session_live : pending_confirm;
+    state = pending_confirm & cmd = buyer_cancel & buyer_cancel_allowed : cancelled_state;
+    state = pending_confirm & cmd = autotime_cancel & autotime_cancel_allowed : cancelled_state;
+    state = pending_confirm & cmd = root_buyer_pay & root_pay_allowed : paid;
+    state = pending_confirm & cmd = delegated_buyer_pay & delegated_pay_allowed : paid;
+
+    state = paid & cmd = root_confirm_delivery & buyer_action_window_open : finalized_state;
+    state = paid & cmd = autotime_auto_release & auto_release_ready : finalized_state;
+    state = paid & cmd = root_open_dispute & dispute_window_open : disputed;
+
+    state = disputed & (cmd = arbiter_full_release | cmd = arbiter_full_refund | cmd = arbiter_split) : finalized_state;
+
+    TRUE : state;
+  esac;
+
+  next(seller_confirmed) := case
+    state = empty & (cmd = root_create | cmd = delegated_create) : FALSE;
+    state = pending_confirm &
+      (
+        cmd = root_seller_confirm_same |
+        cmd = root_seller_confirm_change |
+        (cmd = delegated_seller_confirm_same & delegate_session_live) |
+        (cmd = delegated_seller_confirm_change & delegate_session_live)
+      ) &
+      seller_window_open : TRUE;
+    TRUE : seller_confirmed;
+  esac;
+
+  next(delegate_session_live) := case
+    state = empty & cmd = delegated_create : TRUE;
+    state = empty & cmd = root_create : FALSE;
+    cmd = delegate_expire | cmd = delegate_revoke : FALSE;
+    TRUE : delegate_session_live;
+  esac;
+
+  next(order_created_via_delegate) := case
+    state = empty & cmd = delegated_create : TRUE;
+    state = empty & cmd = root_create : FALSE;
+    TRUE : order_created_via_delegate;
+  esac;
+
+  next(payer_is_vault) := case
+    state = empty & cmd = delegated_create : TRUE;
+    state = empty & cmd = root_create : FALSE;
+    TRUE : payer_is_vault;
+  esac;
+
+  next(canonical_buyer_root) := case
+    state = empty & (cmd = root_create | cmd = delegated_create) : TRUE;
+    TRUE : canonical_buyer_root;
+  esac;
+
+  next(canonical_seller_root) := case
+    state = empty & (cmd = root_create | cmd = delegated_create) : TRUE;
+    TRUE : canonical_seller_root;
+  esac;
+
+  next(refund_to_root) := case
+    state = empty & (cmd = root_create | cmd = delegated_create) : TRUE;
+    TRUE : refund_to_root;
+  esac;
+
+  next(seller_ticks) := case
+    state = empty & (cmd = root_create | cmd = delegated_create) : 2;
+    state = pending_confirm &
+      (
+        cmd = root_seller_confirm_same |
+        cmd = root_seller_confirm_change |
+        (cmd = delegated_seller_confirm_same & delegate_session_live) |
+        (cmd = delegated_seller_confirm_change & delegate_session_live)
+      ) &
+      seller_window_open : 0;
+    state = pending_confirm & !seller_confirmed & cmd = tick & seller_ticks > 0 : seller_ticks - 1;
+    TRUE : seller_ticks;
+  esac;
+
+  next(buyer_pay_ticks) := case
+    state = empty & (cmd = root_create | cmd = delegated_create) : 0;
+    state = pending_confirm &
+      (
+        cmd = root_seller_confirm_change |
+        (cmd = delegated_seller_confirm_change & delegate_session_live)
+      ) &
+      seller_window_open : 2;
+    state = pending_confirm &
+      (
+        cmd = root_seller_confirm_same |
+        (cmd = delegated_seller_confirm_same & delegate_session_live)
+      ) &
+      seller_window_open : 0;
+    state = pending_confirm & cmd = tick & seller_confirmed & buyer_pay_ticks > 0 : buyer_pay_ticks - 1;
+    state = pending_confirm & cmd = root_buyer_pay & root_pay_allowed : 0;
+    state = pending_confirm & cmd = delegated_buyer_pay & delegated_pay_allowed : 0;
+    state = pending_confirm & cmd = buyer_cancel & buyer_cancel_allowed : 0;
+    state = pending_confirm & cmd = autotime_cancel & autotime_cancel_allowed : 0;
+    TRUE : buyer_pay_ticks;
+  esac;
+
+  next(delivery_ticks) := case
+    state = empty & (cmd = root_create | cmd = delegated_create) : 0;
+    state = pending_confirm &
+      (
+        cmd = root_seller_confirm_same |
+        (cmd = delegated_seller_confirm_same & delegate_session_live)
+      ) &
+      seller_window_open : 2;
+    state = pending_confirm & cmd = root_buyer_pay & root_pay_allowed : 2;
+    state = pending_confirm & cmd = delegated_buyer_pay & delegated_pay_allowed : 2;
+    state = paid & cmd = tick & delivery_ticks > 0 : delivery_ticks - 1;
+    TRUE : delivery_ticks;
+  esac;
+
+  next(dispute_ticks) := case
+    state = empty & (cmd = root_create | cmd = delegated_create) : 0;
+    state = pending_confirm &
+      (
+        cmd = root_seller_confirm_same |
+        (cmd = delegated_seller_confirm_same & delegate_session_live)
+      ) &
+      seller_window_open : 2;
+    state = pending_confirm & cmd = root_buyer_pay & root_pay_allowed : 2;
+    state = pending_confirm & cmd = delegated_buyer_pay & delegated_pay_allowed : 2;
+    state = paid & cmd = tick & delivery_ticks = 0 & dispute_ticks > 0 : dispute_ticks - 1;
+    TRUE : dispute_ticks;
+  esac;
+
+INVAR !(asset_locked & state = pending_confirm)
+INVAR (state = paid -> seller_confirmed)
+INVAR (buyer_pay_window_open -> pay_deadline_active)
+INVAR (buyer_cancel_allowed -> pay_deadline_active)
+INVAR (state != empty -> canonical_buyer_root)
+INVAR (state != empty -> canonical_seller_root)
+INVAR (payer_is_vault -> refund_to_root)
+INVAR (!delegate_session_live -> !delegated_pay_allowed)

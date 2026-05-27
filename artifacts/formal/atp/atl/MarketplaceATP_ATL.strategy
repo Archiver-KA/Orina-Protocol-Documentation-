@@ -1,0 +1,26 @@
+-- ATL Strategy Templates for ATP UI (abstracted agents over the executable model)
+-- Agent set (conceptual):
+--   RootBuyer, RootSeller, Delegate, AutoTime, Arbiter, Env
+--
+-- State labels map to the NuSMV executable model variables:
+--   pending_confirm, paid, disputed, finalized_state, cancelled_state
+--   delegate_session_live, root_fallback_available, payer_is_vault
+
+-- RootBuyer and Delegate can cooperate to reach PAID while delegated control is live
+<<RootBuyer, Delegate, RootSeller>> F (state = paid)
+
+-- Delegate plus RootSeller can reach PAID through delegated sellerConfirm while session is live
+AG ((delegated_control_active & seller_window_open) -> <<Delegate, RootSeller>> F (state = paid))
+
+-- RootBuyer can still force progress to PAID after delegate expiry on the revised-time path
+AG (root_fallback_available -> <<RootBuyer>> F (state = paid))
+
+-- RootBuyer can finalize during the buyer action window
+AG ((state = paid & buyer_action_window_open) -> <<RootBuyer>> F (state = finalized_state))
+
+-- Arbiter can force finalization from DISPUTED
+AG ((state = disputed) -> <<Arbiter>> F (state = finalized_state))
+
+-- Strategy review note:
+-- Dispute, cancellation, and confirm-delivery remain root-side actions in the
+-- delegated M2M design. The delegate is modeled only for create/pay/sellerConfirm.

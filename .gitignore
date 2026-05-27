@@ -1,0 +1,28 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets and local env files
+.env
+.env.*
+*.key
+*.pem
+*.p12
+
+# Logs and generated output
+*.log
+dist/
+build/
+cache/
+out/
+broadcast/
+node_modules/
+
+# Local audit output
+slither-*.json
+*.sarif
+
+# Internal planning docs are not part of the public documentation repo
+docs/planning/
