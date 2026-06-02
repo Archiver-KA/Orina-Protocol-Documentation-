@@ -19,7 +19,7 @@ source_baseline: Orina public project profile
 
 | Channel | Link |
 | --- | --- |
-| X / Twitter | https://x.com/Orina_io |
+| X / Twitter | https://x.com/Orina_official |
 | Discord | https://discord.gg/vythc6X9qF |
 | Telegram official | https://t.me/orinaofficial |
 | Telegram global | https://t.me/orinaglobal |

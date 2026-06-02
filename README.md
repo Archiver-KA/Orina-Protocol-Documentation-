@@ -22,7 +22,7 @@ AI and automation may assist sourcing, evaluation, and execution, but they do no
 | Runtime app | https://app.orina.io/ |
 | Blog | https://orina.io/blog |
 | Whitepaper | https://whitepaper.orina.io/ |
-| X / Twitter | https://x.com/Orina_io |
+| X / Twitter | https://x.com/Orina_official |
 | Discord | https://discord.gg/vythc6X9qF |
 | Telegram official | https://t.me/orinaofficial |
 | Telegram global | https://t.me/orinaglobal |
