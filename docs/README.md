@@ -46,6 +46,8 @@ This hub organizes the public Orina Protocol documentation set.
 
 ## Maintenance
 
+- [License](../LICENSE.md)
+- [Notice](../NOTICE.md)
 - [Source Inventory](./reference/source-inventory.md)
 - [Contributing](../CONTRIBUTING.md)
 - [Security Policy](../SECURITY.md)

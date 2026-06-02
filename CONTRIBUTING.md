@@ -7,6 +7,15 @@ status: Public contribution guidance
 
 This repository is a curated public documentation repository. Contributions should improve clarity, correctness, structure, or public verification material without adding private operational content.
 
+By contributing to this repository, you agree that your contribution may be published under this repository's license terms:
+
+- Documentation text under `CC-BY-NC-4.0`.
+- Code snippets and command examples under the MIT License.
+- Formal artifacts and bytecode as verification-only publication material.
+- Brand assets reserved by Orina Protocol.
+
+See [LICENSE.md](./LICENSE.md) and [NOTICE.md](./NOTICE.md).
+
 ## Documentation Rules
 
 - Add `date: YYYY-MM-DD` metadata to every Markdown file.
@@ -25,12 +34,12 @@ Before submitting documentation changes:
 - Confirm artifact hashes match the files in `artifacts/`.
 - Confirm no operational specs or secrets were added.
 - Confirm source commit and path references are updated when source material changes.
+- Confirm contributed material is original, project-owned, or otherwise permitted for publication under this repository's license scope.
 
 ## Owner Decisions
 
 The following remain project-owner decisions:
 
-- Public documentation license.
 - Public vulnerability intake address.
 - ABI publication policy.
 - Signed release provenance policy.

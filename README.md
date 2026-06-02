@@ -114,10 +114,19 @@ See [DAO Fee Governance](./docs/protocol/dao-fee-governance.md) for the Hybrid D
 
 ## Repository Policy
 
+- [License](./LICENSE.md)
+- [Notice](./NOTICE.md)
 - [Security Policy](./SECURITY.md)
 - [Contributing](./CONTRIBUTING.md)
 - [Source Inventory](./docs/reference/source-inventory.md)
 
 ## License
 
-No public documentation license was selected in the source repositories. Treat license selection as an owner decision before broad publication or third-party contribution intake.
+This documentation repository uses scoped licensing:
+
+- Documentation text: [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) (`CC-BY-NC-4.0`).
+- Code snippets and command examples: MIT License.
+- Formal artifacts and bytecode: published for verification and reproducibility only; no deployment or commercialization license is implied.
+- Orina brand assets: reserved.
+
+See [LICENSE.md](./LICENSE.md) and [NOTICE.md](./NOTICE.md) for the controlling terms and attribution guidance.

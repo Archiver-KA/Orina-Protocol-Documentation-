@@ -5,6 +5,19 @@ date: 2026-05-27
 status: Public curation manifest
 ---
 
+## License Scope
+
+This inventory records provenance for public documentation material. It is not a license grant for upstream source repositories.
+
+Repository license scope:
+
+- Documentation text in this repository: `CC-BY-NC-4.0`.
+- Code snippets and command examples in this repository: MIT License.
+- Formal artifacts and bytecode files: verification-only publication; no deployment or commercialization license implied.
+- Orina brand assets: reserved.
+
+See [License](../../LICENSE.md) and [Notice](../../NOTICE.md) for controlling terms.
+
 ## Source Repositories
 
 ### ATP Contracts
