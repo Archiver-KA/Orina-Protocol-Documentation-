@@ -79,6 +79,8 @@ Fee constraints from source:
 - Maximum referral fee bps: `200`
 - Maximum total fee bps: `700`
 
+The public Hybrid DAO fee model maps these presets to a 2% completed-transaction fee for supported stablecoin rails and a 1% completed-transaction fee for ORI settlement. See [DAO Fee Governance](./dao-fee-governance.md) for the current public fee allocation model and governance boundaries.
+
 ## RWA Asset And Receipt Flow
 
 `OrinaRWA` records seller-owned asset supply and locks amounts for orders. Finalized RWA orders can mint a receipt through `RWAReceiptNFT`. The receipt contract is non-transferable and reflects finalized ownership evidence rather than a freely transferable marketplace token.

@@ -85,13 +85,15 @@ Material excluded from public docs:
 
 Whitepaper repository:
 
-- Git commit: `6bdf0fded32dbbc84187723a22daa93120a1baea`
+- Git commit: `208b8f66de55c979fe387c39fc714e77963cdb28`
 - Remote:
   - `origin`: `https://github.com/Archiver-KA/WhitepaperOrinaio.git`
 
 Public material used:
 
 - `ORINA_WHITEPAPER_v2.md`
+- `src/app/pages/DAOPage.tsx`
+- `src/app/pages/TokenomicsPage.tsx`
 
 Additional owner-provided project profile sources:
 

@@ -52,3 +52,11 @@ Temporal logic/specification formats used in the ATP formal artifact set:
 ## Bytecode
 
 Compiled EVM code exported from Foundry for `MarketplaceATP`. This repository publishes creation and runtime bytecode artifacts with SHA-256 hashes.
+
+## Hybrid DAO
+
+The Orina fee governance model that separates ATP settlement correctness from fee economics. Under the current public model, completed-transaction fee profit is expected to split 50% to platform retained profit and 50% to the ORI holder DAO allocation layer.
+
+## DAO Fee Allocation
+
+The ORI holder-facing portion of protocol fee profit where an active DAO distribution, staking, or incentive mechanism is published. DAO fee allocation does not override escrow custody, dispute resolution, or ATP finality.

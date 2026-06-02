@@ -46,6 +46,7 @@ AI and automation may assist sourcing, evaluation, and execution, but they do no
 | Docs hub | [Docs Hub](./docs/README.md) |
 | Protocol | [Protocol Overview](./docs/protocol/overview.md) |
 | Contracts | [Contract System](./docs/protocol/contract-system.md) |
+| DAO fee governance | [DAO Fee Governance](./docs/protocol/dao-fee-governance.md) |
 | Order lifecycle | [Order Lifecycle](./docs/protocol/order-lifecycle.md) |
 | M2M delegation | [M2M Delegation](./docs/protocol/m2m-delegation.md) |
 | Runtime | [Runtime Overview](./docs/runtime/overview.md) |
@@ -108,6 +109,8 @@ Excluded:
 | Contract | [`0x093969C2Bb194e7424534918ECa5119FA72a61d6`](https://bscscan.com/token/0x093969c2bb194e7424534918eca5119fa72a61d6) |
 
 ORI is a protocol coordination token used around ecosystem access, fees, participation, and future governance functions. ORI does not replace ATP and does not define transaction correctness; ATP is the settlement logic.
+
+See [DAO Fee Governance](./docs/protocol/dao-fee-governance.md) for the Hybrid DAO fee model: 1% ORI completed-transaction fee, 2% supported stablecoin completed-transaction fee, and a 50% platform / 50% ORI holder DAO allocation target for fee profit.
 
 ## Repository Policy
 

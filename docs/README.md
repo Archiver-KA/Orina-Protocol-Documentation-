@@ -26,6 +26,7 @@ This hub organizes the public Orina Protocol documentation set.
 ## Protocol
 
 - [Contract System](./protocol/contract-system.md)
+- [DAO Fee Governance](./protocol/dao-fee-governance.md)
 - [Order Lifecycle](./protocol/order-lifecycle.md)
 - [M2M Delegation](./protocol/m2m-delegation.md)
 
