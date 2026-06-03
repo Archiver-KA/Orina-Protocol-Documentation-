@@ -1,7 +1,7 @@
 # Notice
 
 ---
-date: 2026-06-02
+date: 2026-06-03
 status: Public repository notice
 ---
 
@@ -26,26 +26,26 @@ See [LICENSE.md](./LICENSE.md) for the controlling repository terms.
 
 Summary:
 
-- Documentation text: Creative Commons Attribution-NonCommercial 4.0 International (`CC-BY-NC-4.0`).
-- Code snippets and command examples: MIT License.
-- Formal artifacts and bytecode: verification-only publication; no deployment or commercialization license implied.
+- Public documentation text, diagrams, public security summaries, and public formal specification materials: dual-licensed under Creative Commons Attribution 4.0 International or Apache License 2.0 (`CC-BY-4.0 OR Apache-2.0`).
+- Code snippets and command examples: MIT License or Apache License 2.0 (`MIT OR Apache-2.0`).
+- Exported EVM bytecode and bytecode hashes: verification-only publication; no deployment or commercialization license implied.
 - Brand assets: reserved by Orina Protocol.
 
 ## Attribution
 
-When reusing documentation text under `CC-BY-NC-4.0`, attribute the material to Orina Protocol and link to this repository when practical:
+When reusing public documentation text or public formal specification material under `CC-BY-4.0`, attribute the material to Orina Protocol and link to this repository when practical:
 
 https://github.com/Archiver-KA/Orina-Protocol-Documentation-
 
 Example attribution:
 
-> Documentation adapted from Orina Protocol Documentation, licensed under CC BY-NC 4.0.
+> Documentation adapted from Orina Protocol Documentation, licensed under CC BY 4.0 or Apache 2.0.
 
 ## Formal Artifact Notice
 
-Formal artifacts and bytecode files are published so reviewers can verify public claims, reproduce hashes, inspect model/specification inputs, and compare documentation against the recorded artifact bundle.
+Public formal model/specification files are available under the repository dual-license terms. Exported bytecode files are published so reviewers can verify public claims, reproduce hashes, inspect bytecode metadata, and compare documentation against the recorded artifact bundle.
 
-They are not deployment instructions and do not grant rights to deploy, operate, fork, commercialize, or represent Orina Protocol systems.
+Exported bytecode files are not deployment instructions and do not grant rights to deploy, operate, fork, commercialize, or represent Orina Protocol systems.
 
 ## Brand Notice
 

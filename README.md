@@ -124,9 +124,9 @@ See [DAO Fee Governance](./docs/protocol/dao-fee-governance.md) for the Hybrid D
 
 This documentation repository uses scoped licensing:
 
-- Documentation text: [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) (`CC-BY-NC-4.0`).
-- Code snippets and command examples: MIT License.
-- Formal artifacts and bytecode: published for verification and reproducibility only; no deployment or commercialization license is implied.
+- Public documentation text, diagrams, public security summaries, and public formal specification materials: dual-licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) or [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) (`CC-BY-4.0 OR Apache-2.0`).
+- Code snippets and command examples: MIT License or Apache License 2.0 (`MIT OR Apache-2.0`).
+- Exported EVM bytecode and bytecode hashes: published for verification and reproducibility only; no deployment or commercialization license is implied.
 - Orina brand assets: reserved.
 
 See [LICENSE.md](./LICENSE.md) and [NOTICE.md](./NOTICE.md) for the controlling terms and attribution guidance.

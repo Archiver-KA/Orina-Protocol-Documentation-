@@ -1,7 +1,7 @@
 # ATP Formal Artifacts
 
 ---
-date: 2026-05-27
+date: 2026-06-03
 status: Public artifact bundle
 source_artifact_date: 2026-05-18
 ---
@@ -28,3 +28,7 @@ This folder contains the curated public ATP formal artifact bundle copied from t
 ## Scope
 
 These artifacts document ATP lifecycle and delegated authority checks for the public documentation bundle. They do not include deployment runbooks, RPC configuration, private keys, or operator-only execution procedures.
+
+Formal model/specification files under `atl/`, `ctl/`, `ltl/`, and `nusmv/` are public formal specification materials covered by the repository dual-license terms: `CC-BY-4.0 OR Apache-2.0`.
+
+Exported EVM bytecode files under `evm/` are published only for public verification, reproducibility, audit reference, and documentation. They do not grant deployment, operation, fork, commercialization, trademark, endorsement, or production-use rights.

@@ -1,7 +1,7 @@
 # Contributing
 
 ---
-date: 2026-05-27
+date: 2026-06-03
 status: Public contribution guidance
 ---
 
@@ -9,9 +9,9 @@ This repository is a curated public documentation repository. Contributions shou
 
 By contributing to this repository, you agree that your contribution may be published under this repository's license terms:
 
-- Documentation text under `CC-BY-NC-4.0`.
-- Code snippets and command examples under the MIT License.
-- Formal artifacts and bytecode as verification-only publication material.
+- Public documentation text, diagrams, public security summaries, and public formal specification material under `CC-BY-4.0 OR Apache-2.0`.
+- Code snippets and command examples under `MIT OR Apache-2.0`.
+- Exported EVM bytecode and bytecode hashes as verification-only publication material with no deployment or commercialization license implied.
 - Brand assets reserved by Orina Protocol.
 
 See [LICENSE.md](./LICENSE.md) and [NOTICE.md](./NOTICE.md).
@@ -35,6 +35,7 @@ Before submitting documentation changes:
 - Confirm no operational specs or secrets were added.
 - Confirm source commit and path references are updated when source material changes.
 - Confirm contributed material is original, project-owned, or otherwise permitted for publication under this repository's license scope.
+- Confirm any new formal specification or test-vector material can be published under `CC-BY-4.0 OR Apache-2.0`.
 
 ## Owner Decisions
 

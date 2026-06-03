@@ -1,7 +1,7 @@
 # Source Inventory
 
 ---
-date: 2026-05-27
+date: 2026-06-03
 status: Public curation manifest
 ---
 
@@ -11,9 +11,9 @@ This inventory records provenance for public documentation material. It is not a
 
 Repository license scope:
 
-- Documentation text in this repository: `CC-BY-NC-4.0`.
-- Code snippets and command examples in this repository: MIT License.
-- Formal artifacts and bytecode files: verification-only publication; no deployment or commercialization license implied.
+- Public documentation text, diagrams, public security summaries, and public formal specification materials: `CC-BY-4.0 OR Apache-2.0`.
+- Code snippets and command examples in this repository: `MIT OR Apache-2.0`.
+- Exported EVM bytecode and bytecode hashes: verification-only publication; no deployment or commercialization license implied.
 - Orina brand assets: reserved.
 
 See [License](../../LICENSE.md) and [Notice](../../NOTICE.md) for controlling terms.

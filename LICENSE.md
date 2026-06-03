@@ -1,29 +1,50 @@
 # License
 
 ---
-date: 2026-06-02
-status: Public repository license terms
+date: 2026-06-03
+status: Public repository dual-license terms
 ---
 
 Copyright (c) 2026 Orina Protocol.
 
 This repository uses different license terms for different material types.
 
-## Documentation Text
+## Public Documentation And Formal Specification Materials
 
-Unless another section of this file says otherwise, Markdown documentation text in this repository is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
+Unless another section of this file says otherwise, public documentation text, public diagrams, public glossary material, public protocol explanations, public security summaries, and public formal specification materials in this repository are dual-licensed under:
 
-SPDX-License-Identifier: `CC-BY-NC-4.0`
+- Creative Commons Attribution 4.0 International; or
+- Apache License 2.0.
 
-License reference: https://creativecommons.org/licenses/by-nc/4.0/
+You may choose either license for reuse.
 
-You may share and adapt the documentation text for non-commercial purposes if you provide appropriate attribution and indicate whether changes were made. Commercial reuse requires prior written permission from the project owner.
+SPDX-License-Identifier: `CC-BY-4.0 OR Apache-2.0`
+
+License references:
+
+- https://creativecommons.org/licenses/by/4.0/
+- https://www.apache.org/licenses/LICENSE-2.0
+
+This dual-license grant is intended to make Orina's public ATP documentation and formal settlement specification usable as public-good reference material for builders, auditors, researchers, ecosystem reviewers, and grant programs.
+
+Covered examples:
+
+- Markdown documentation under `docs/`.
+- Public protocol diagrams and explanatory material, if present.
+- Public formal model/specification files under:
+  - `artifacts/formal/atp/atl/`
+  - `artifacts/formal/atp/ctl/`
+  - `artifacts/formal/atp/ltl/`
+  - `artifacts/formal/atp/nusmv/`
+- Non-sensitive test vectors, reproducibility notes, and public verification notes, if added later.
+
+This section does not apply to exported EVM bytecode files, brand assets, private repositories, deployment runbooks, operator scripts, secrets, or upstream repositories.
 
 ## Code Snippets
 
-Short code snippets, command examples, configuration examples, and illustrative source-code fragments embedded in documentation are licensed under the MIT License unless they are copied from another upstream project with its own license notice.
+Short code snippets, command examples, configuration examples, and illustrative source-code fragments embedded in documentation are licensed under the MIT License or Apache License 2.0, at your option, unless they are copied from another upstream project with its own license notice.
 
-SPDX-License-Identifier: `MIT`
+SPDX-License-Identifier: `MIT OR Apache-2.0`
 
 MIT License text:
 
@@ -33,11 +54,21 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE CODE SNIPPETS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE CODE SNIPPETS OR THE USE OR OTHER DEALINGS IN THE CODE SNIPPETS.
 
-## Formal Artifacts And Bytecode
+Apache License 2.0 reference:
 
-Files under `artifacts/formal/`, exported bytecode files, formal model/specification files, artifact hashes, and formal verification materials are published for public verification, reproducibility, audit reference, and documentation only.
+https://www.apache.org/licenses/LICENSE-2.0
 
-Publication of these artifacts does not grant:
+## Exported Bytecode And Deployment Boundaries
+
+Exported EVM bytecode files, artifact hashes for bytecode files, and bytecode metadata are published for public verification, reproducibility, audit reference, and documentation only.
+
+This includes:
+
+- `artifacts/formal/atp/evm/MarketplaceATP.creation.bytecode.hex`
+- `artifacts/formal/atp/evm/MarketplaceATP.runtime.bytecode.hex`
+- Bytecode hashes and byte-length records in documentation and source inventory files.
+
+Publication of exported bytecode does not grant:
 
 - A deployment license.
 - A license to operate, fork, or commercialize Orina Protocol contracts or systems.
@@ -57,6 +88,12 @@ You may not use Orina branding in a way that implies sponsorship, endorsement, p
 This license applies only to the material in this documentation repository. It does not change the license status of any source repository, smart contract repository, runtime application repository, private operator repository, or upstream dependency referenced by this documentation.
 
 If a referenced source repository has its own license, that license controls that repository. If a referenced source repository has no selected license, no license is granted by this documentation repository.
+
+## Prior NonCommercial Notice
+
+Earlier versions of this repository described documentation text under `CC-BY-NC-4.0`. As of 2026-06-03, Orina Protocol has relicensed the covered public documentation and covered public formal specification materials in this repository under `CC-BY-4.0 OR Apache-2.0` as stated above.
+
+This relicensing does not apply to excluded material such as brand assets, exported bytecode deployment rights, private runtime/source repositories, private operator material, or third-party content outside Orina Protocol's licensing control.
 
 ## No Warranty
 
