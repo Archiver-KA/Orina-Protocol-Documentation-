@@ -1,7 +1,7 @@
 # Glossary
 
 ---
-date: 2026-05-27
+date: 2026-06-04
 status: Public documentation baseline
 ---
 
@@ -33,6 +33,10 @@ An AI wallet or configured payer address that funds delegated buy flows. The pay
 
 A non-transferable `RWAReceiptNFT` minted after finalized RWA settlement to represent buyer-side receipt evidence.
 
+## NFT Asset Token
+
+A transferable ERC721 token minted after finalized ATP settlement for an NFT-type asset. This is distinct from a non-transferable RWA receipt.
+
 ## EIP-712
 
 Typed structured-data signing standard used by ATP order and dispute agreement flows.
@@ -55,7 +59,7 @@ Compiled EVM code exported from Foundry for `MarketplaceATP`. This repository pu
 
 ## Hybrid DAO
 
-The Orina fee governance model that separates ATP settlement correctness from fee economics. Under the current public model, completed-transaction fee profit is expected to split 50% to platform retained profit and 50% to the ORI holder DAO allocation layer.
+The Orina fee governance model that separates ATP settlement correctness from fee economics. Under the current public model, completed-transaction protocol fee is expected to split 50% to platform retained profit and 50% to the DAO allocation layer.
 
 ## DAO Fee Allocation
 

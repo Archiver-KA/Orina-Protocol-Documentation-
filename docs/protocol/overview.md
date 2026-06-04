@@ -1,16 +1,16 @@
 # Protocol Overview
 
 ---
-date: 2026-05-27
+date: 2026-06-04
 status: Public documentation baseline
-source_baseline: Public ATP v3.4 runtime and contract documentation
+source_baseline: Public ATP v3.5 beta runtime and contract documentation
 ---
 
 Orina ATP is an escrowed bilateral transaction protocol for real-world asset marketplace flows. The protocol coordinates asset inventory, buyer payment escrow, seller confirmation, delivery timing, dispute settlement, receipt minting, fee distribution, and optional delegated machine-to-machine execution.
 
 ## Current Public Runtime
 
-The current public runtime reference is ATP v3.4.1 on BSC Testnet. The primary EIP-712 order domain uses `MarketplaceATP` version `3.4`, and the public runtime app is documented in [Runtime App](../runtime/live-app.md).
+The current public runtime reference is ATP v3.5 beta on BSC Testnet. The primary EIP-712 order domain still uses `MarketplaceATP` version `3.4` for signature compatibility, and the public runtime app is documented in [Runtime App](../runtime/live-app.md).
 
 ## Main Protocol Roles
 
@@ -30,7 +30,7 @@ The current public runtime reference is ATP v3.4.1 on BSC Testnet. The primary E
 - `MarketplaceATP` coordinates order creation, seller confirmation, buyer payment acceptance, delivery confirmation, auto-release, cancellation, and dispute entry.
 - `OrinaRWA` tracks seller-owned RWA asset supply and order-bound locks.
 - `PaymentGateway` escrows ERC-20 payment tokens and routes seller proceeds, refunds, and fees.
-- `RWAReceiptNFT` mints non-transferable receipts after finalized RWA settlement.
+- `RWAReceiptNFT` mints non-transferable receipts after finalized RWA settlement and transferable ERC721 tokens after finalized NFT settlement.
 
 ### Governance And Automation
 
@@ -55,7 +55,8 @@ The current public runtime reference is ATP v3.4.1 on BSC Testnet. The primary E
 - Delegated funding may use a payer vault, but the payer vault is not the buyer.
 - Refund routing remains bound to the root buyer.
 - Seller payout routing remains bound to the root seller.
-- Receipts are minted for finalized RWA ownership and are non-transferable.
+- RWA receipts are minted for finalized RWA ownership and are non-transferable.
+- NFT finalization mints transferable ERC721 tokens.
 - Finality is sticky after a terminal finalized or cancelled condition.
 - Root direct-action fallback remains available after delegate expiry or revoke.
 

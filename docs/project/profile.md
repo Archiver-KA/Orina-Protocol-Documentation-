@@ -1,7 +1,7 @@
 # Project Profile
 
 ---
-date: 2026-05-27
+date: 2026-06-04
 status: Public project profile
 source_baseline: Orina profile, protocol spec, and whitepaper sources
 ---
@@ -60,7 +60,7 @@ Commerce should be settlement-first. A transaction is reliable only when it has 
 | `FeeManager` | Fee calculation and token-specific fee presets. |
 | `AutoTimeManager` | Time-based executor for cancellation, auto-release, and stale state handling. |
 | `DisputeManager` | Dispute opening, state, and binding resolution paths. |
-| `RWAReceiptNFT` | Post-finalization non-transferable receipt issuance. |
+| `RWAReceiptNFT` | Post-finalization ERC721 layer for non-transferable RWA receipts and transferable NFT outcomes. |
 | `DelegationManager` | Bounded autonomous execution layer for delegated actions and M2M commerce. |
 
 ## ORI Token Snapshot

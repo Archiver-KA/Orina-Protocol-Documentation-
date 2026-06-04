@@ -1,9 +1,9 @@
 # Runtime Overview
 
 ---
-date: 2026-05-27
+date: 2026-06-04
 status: Public documentation baseline
-source_baseline: Runtime repository commit 67a69e7b37ccd38dc35d005355eccc9f9bf89ff0
+source_baseline: Runtime repository ATP v3.5 beta sync
 ---
 
 Orina Protocol Runtime is the production-facing application repository for the Orina marketplace experience. It contains the React frontend, wallet flows, Supabase runtime surfaces, release checks, and current-code runtime documentation.
@@ -14,7 +14,7 @@ The public runtime app is available at:
 
 - https://app.orina.io/
 
-The current public runtime reference is ATP v3.4.1 on BSC Testnet. See [Runtime App](./live-app.md) for the public app and contract reference.
+The current public runtime reference is ATP v3.5 beta on BSC Testnet. See [Runtime App](./live-app.md) for the public app and contract reference.
 
 ## Stack
 

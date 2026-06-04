@@ -1,5 +1,5 @@
 <!--
-date: 2026-05-27
+date: 2026-06-04
 status: Public documentation baseline
 source_status: Curated from Orina protocol, runtime, profile, and whitepaper sources
 -->
@@ -80,7 +80,7 @@ Included:
 
 - Project profile and official social links.
 - Basic protocol and runtime documentation.
-- Public runtime app reference for ATP v3.4.1.
+- Public runtime app reference for ATP v3.5 beta.
 - Contract responsibilities and invariants.
 - Public security posture and verification summaries.
 - Formal model/specification references.
@@ -110,7 +110,7 @@ Excluded:
 
 ORI is a protocol coordination token used around ecosystem access, fees, participation, and future governance functions. ORI does not replace ATP and does not define transaction correctness; ATP is the settlement logic.
 
-See [DAO Fee Governance](./docs/protocol/dao-fee-governance.md) for the Hybrid DAO fee model: 1% ORI completed-transaction fee, 2% supported stablecoin completed-transaction fee, and a 50% platform / 50% ORI holder DAO allocation target for fee profit.
+See [DAO Fee Governance](./docs/protocol/dao-fee-governance.md) for the Hybrid DAO fee model: 1% ORI fee-token path, 2% supported stablecoin fee-token path, no protocol burn, and a 50% platform / 50% DAO allocation target.
 
 ## Repository Policy
 

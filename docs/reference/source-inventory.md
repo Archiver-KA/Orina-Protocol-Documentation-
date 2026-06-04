@@ -1,7 +1,7 @@
 # Source Inventory
 
 ---
-date: 2026-06-03
+date: 2026-06-04
 status: Public curation manifest
 ---
 
@@ -23,7 +23,7 @@ See [License](../../LICENSE.md) and [Notice](../../NOTICE.md) for controlling te
 ### ATP Contracts
 
 - Git branch: `main`
-- Git commit: `be466831ff367a7891b32b61e6541dc294b2f066`
+- Git commit: `f982da25486c40c2bc1726492220bcc7e6d964f4`
 - Remotes:
   - `origin`: `https://github.com/Archiver-KA/contract-atp-protocol.git`
   - `atp-protocol`: `https://github.com/Archiver-KA/ATP-Protocol.git`
@@ -60,7 +60,7 @@ Material excluded from public docs:
 ### Runtime Application
 
 - Git branch: `main`
-- Git commit: `67a69e7b37ccd38dc35d005355eccc9f9bf89ff0`
+- Git commit: `80b6f05293b34540b06edebba1b41ddf5a05926c`
 - Remotes:
   - `origin`: `https://github.com/Archiver-KA/Orina-Protocol-Runtime`
   - `origin-app`: `https://github.com/Archiver-KA/Orina-Protocol-App`
@@ -75,7 +75,7 @@ Public material used:
 - `docs/order-state-semantics.md`
 - `docs/release-provenance.md`
 - `package.json`
-- Current ATP v3.4.1 runtime verification notes
+- Current ATP v3.5 beta runtime verification notes
 - Runtime internal audit report
 
 Material excluded from public docs:
@@ -98,13 +98,14 @@ Material excluded from public docs:
 
 Whitepaper repository:
 
-- Git commit: `208b8f66de55c979fe387c39fc714e77963cdb28`
+- Git commit: `168ca1536d0ea90e9323f2556a611f34a97925be`
 - Remote:
   - `origin`: `https://github.com/Archiver-KA/WhitepaperOrinaio.git`
 
 Public material used:
 
 - `ORINA_WHITEPAPER_v2.md`
+- `ORINA_ATP_RUNTIME_v3.4.1_AND_v3.5_PLAN.md`
 - `src/app/pages/DAOPage.tsx`
 - `src/app/pages/TokenomicsPage.tsx`
 

@@ -1,7 +1,7 @@
 # Runtime User Guide
 
 ---
-date: 2026-05-27
+date: 2026-06-04
 status: Public documentation baseline
 source_baseline: Summarized from runtime user guide and FAQ
 ---
@@ -71,17 +71,26 @@ Map markers depend on asset location snapshots with valid coordinates.
 2. Select the configured live network.
 3. Open an asset detail page.
 4. Review seller, unit, quantity, payment token, price, delivery terms, and configurable attributes.
-5. Select or confirm delivery address when required.
-6. Sign the buyer order request.
-7. Wait for seller confirmation.
-8. If seller revises delivery time, accept through buyer re-sign/pay flow within the allowed window.
-9. Confirm delivery when the asset is received, or open a dispute during the allowed review window.
+5. Select the protocol fee token when the UI exposes a separate fee-token option.
+6. Select or confirm delivery address when required.
+7. Sign the buyer order request.
+8. Wait for seller confirmation.
+9. If seller revises delivery time, accept through buyer re-sign/pay flow within the allowed window.
+10. Confirm delivery when the asset is received, or open a dispute during the allowed review window.
 
 The ATP order signing payload is:
 
 ```text
 Order(orderId,buyer,seller,paymentToken,assetId,grossPrice,amount,estDeliverySeconds)
 ```
+
+When the fee token differs from the payment token, the buyer signs:
+
+```text
+OrderWithFeeToken(orderId,buyer,seller,paymentToken,feeToken,assetId,grossPrice,amount,estDeliverySeconds)
+```
+
+In ATP v3.5 beta, USDT/USDC purchases may pay protocol fee in the payment token at total 2%, or in ORI at total 1%. The ORI beta path assumes nominal ORI/payment-token parity; production requires oracle pricing.
 
 Users should not send payment outside the protocol escrow flow.
 
@@ -95,6 +104,8 @@ Before minting:
 4. Prepare media, description, category, unit, quantity, price, and delivery settings.
 
 RWA minting snapshots delivery and asset location metadata. Incorrect settings can produce incorrect listing metadata.
+
+RWA orders finalize into non-transferable receipt NFTs. NFT-type orders finalize into transferable ERC721 tokens.
 
 ## Orders And Disputes
 

@@ -1,7 +1,7 @@
 # DAO Fee Governance
 
 ---
-date: 2026-06-02
+date: 2026-06-04
 status: Public documentation draft
 source_baseline: Orina whitepaper DAO fee governance update
 ---
@@ -23,27 +23,27 @@ The DAO should not be described as a discretionary settlement authority. It does
 
 ## Completed Transaction Fee Schedule
 
-The intended completed-transaction fee schedule is:
+The ATP v3.5 beta completed-transaction fee schedule is based on the selected protocol fee token:
 
-| Payment rail | Fee rate | Basis points | Trigger |
+| Fee token | Fee rate | Basis points | Trigger |
 | --- | ---: | ---: | --- |
 | ORI | 1% | 100 bps | Completed transaction |
 | USDT | 2% | 200 bps | Completed transaction |
 | USDC | 2% | 200 bps | Completed transaction |
 | Supported stablecoins | 2% | 200 bps | Completed transaction |
 
-The `100` bps ORI preset and `200` bps stablecoin preset align with the public `FeeManager` source summary in [Contract System](./contract-system.md).
+The `100` bps ORI preset and `200` bps USDT/USDC preset align with the public `FeeManager` source summary in [Contract System](./contract-system.md). ATP v3.5 beta does not route protocol burn fees.
 
 ## Fee Profit Allocation
 
-Fee profit is expected to split equally between the platform and the DAO allocation layer:
+Protocol fee is expected to split equally between the platform and the DAO allocation layer:
 
-| Allocation | Share of fee profit | Purpose |
+| Allocation | Share of protocol fee | Purpose |
 | --- | ---: | --- |
 | Platform retained profit | 50% | Protocol development, infrastructure, operations, security, integrations, and reserve needs. |
 | ORI holder DAO allocation | 50% | DAO-directed distribution, staking rewards, holder incentives, or other approved ORI-aligned programs. |
 
-This allocation is a policy target for fee economics. Final activation requires published rules for eligibility, timing, claim mechanics, exclusions, jurisdictional limits, and any applicable vesting or lockup conditions.
+This allocation is a policy target for fee economics. DAO-facing activation requires published rules for eligibility, timing, claim mechanics, exclusions, jurisdictional limits, and any applicable vesting or lockup conditions.
 
 ## Settlement Examples
 
@@ -53,7 +53,7 @@ This allocation is a policy target for fee economics. Final activation requires 
 | 10,000 USDT | USDT | 200 USDT | 100 USDT | 100 USDT | 9,800 USDT |
 | 10,000 USDC | USDC | 200 USDC | 100 USDC | 100 USDC | 9,800 USDC |
 
-These examples illustrate the protocol fee schedule only. They do not include gas costs, third-party payment costs, exchange-rate effects, taxes, off-chain service charges, or jurisdiction-specific withholding rules.
+These examples illustrate the protocol fee schedule only. They do not include gas costs, third-party payment costs, exchange-rate effects, taxes, off-chain service charges, or jurisdiction-specific withholding rules. Testnet/beta ORI fee quotes assume nominal ORI/payment-token parity; mainnet requires an oracle quote layer.
 
 ## Governance Scope
 

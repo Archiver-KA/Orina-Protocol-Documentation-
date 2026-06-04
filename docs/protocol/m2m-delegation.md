@@ -1,7 +1,7 @@
 # M2M Delegation
 
 ---
-date: 2026-05-27
+date: 2026-06-04
 status: Public documentation baseline
 source_baseline: DelegationManager, AIWalletV2, AI wallet design docs
 ---
@@ -79,7 +79,7 @@ Delegated sessions bind:
 - seller min gross price
 - max delivery seconds
 
-No-expiry delegated sessions are allowed only when buy/pay/confirm authority is counterparty-bound and remain revocable by the root.
+No-expiry delegated sessions are an explicit ATP v3.5 beta option. They are allowed only when buy/pay/confirm authority is counterparty-bound and remain revocable by the root.
 
 ## Funding Model
 
