@@ -43,6 +43,7 @@ AI and automation may assist sourcing, evaluation, and execution, but they do no
 | Area | Start here |
 | --- | --- |
 | Project profile | [Project Profile](./docs/project/profile.md) |
+| Tokenomics | [ORI Tokenomics](./docs/project/tokenomics.md) |
 | Docs hub | [Docs Hub](./docs/README.md) |
 | Protocol | [Protocol Overview](./docs/protocol/overview.md) |
 | Contracts | [Contract System](./docs/protocol/contract-system.md) |
@@ -111,6 +112,8 @@ Excluded:
 ORI is a protocol coordination token used around ecosystem access, fees, participation, and future governance functions. ORI does not replace ATP and does not define transaction correctness; ATP is the settlement logic.
 
 See [DAO Fee Governance](./docs/protocol/dao-fee-governance.md) for the Hybrid DAO fee model: 1% ORI fee-token path, 2% supported stablecoin fee-token path, no protocol burn, and a 50% platform / 50% DAO allocation target.
+
+See [ORI Tokenomics](./docs/project/tokenomics.md) for public token supply, allocation, vesting, fee-alignment, and reference valuation formulas.
 
 ## Repository Policy
 

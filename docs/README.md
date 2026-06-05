@@ -10,6 +10,7 @@ This hub organizes the public Orina Protocol documentation set.
 ## Start Here
 
 - [Project Profile](./project/profile.md)
+- [ORI Tokenomics](./project/tokenomics.md)
 - [Protocol Overview](./protocol/overview.md)
 - [Runtime App](./runtime/live-app.md)
 - [Runtime Overview](./runtime/overview.md)
@@ -21,6 +22,7 @@ This hub organizes the public Orina Protocol documentation set.
 ## Project
 
 - [Project Profile](./project/profile.md)
+- [ORI Tokenomics](./project/tokenomics.md)
 - [Official Links](./reference/official-links.md)
 
 ## Protocol
