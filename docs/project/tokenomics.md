@@ -114,12 +114,14 @@ This allocation has a 3-month cliff, followed by linear vesting over 48 months. 
 
 ORI also supports the protocol fee layer. The intended model applies a lower completed-transaction fee for ORI settlement and a higher fee for supported stablecoin rails.
 
-| Payment rail | Completed transaction fee | Fee profit split |
+| Payment rail | Completed transaction fee | Protocol fee allocation |
 | --- | ---: | --- |
-| ORI | 1% | 50% platform retained profit / 50% ORI holder DAO allocation |
-| USDT, USDC, and supported stablecoins | 2% | 50% platform retained profit / 50% ORI holder DAO allocation |
+| ORI | 1% | 50% platform retained protocol fee / 50% DAO ecosystem allocation |
+| USDT, USDC, and supported stablecoins | 2% | 50% platform retained protocol fee / 50% DAO ecosystem allocation |
 
 The Hybrid DAO model governs fee economics around completed transactions. It does not change ATP settlement finality, escrow custody, dispute paths, or order-state correctness.
+
+DAO ecosystem allocation does not create equity, dividends, revenue-share rights, legal ownership, or an expectation of profit from the work of Orina or any operating entity. Any DAO-funded program requires published eligibility, claim, exclusion, timing, and jurisdiction rules before activation.
 
 ## Reference Valuation Formula
 

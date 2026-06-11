@@ -59,8 +59,8 @@ Compiled EVM code exported from Foundry for `MarketplaceATP`. This repository pu
 
 ## Hybrid DAO
 
-The Orina fee governance model that separates ATP settlement correctness from fee economics. Under the current public model, completed-transaction protocol fee is expected to split 50% to platform retained profit and 50% to the DAO allocation layer.
+The Orina fee governance model that separates ATP settlement correctness from fee economics. Under the current public model, completed-transaction protocol fee is expected to split 50% to platform retained protocol fees and 50% to the DAO ecosystem allocation layer.
 
 ## DAO Fee Allocation
 
-The ORI holder-facing portion of protocol fee profit where an active DAO distribution, staking, or incentive mechanism is published. DAO fee allocation does not override escrow custody, dispute resolution, or ATP finality.
+The governance-scoped portion of protocol fees where an active DAO ecosystem program is published. DAO fee allocation does not override escrow custody, dispute resolution, or ATP finality, and does not create equity, dividends, revenue-share rights, or legal ownership.

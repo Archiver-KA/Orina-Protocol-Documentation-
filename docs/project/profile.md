@@ -20,7 +20,7 @@ Orina Protocol is designed to solve a core weakness in digital commerce, marketp
 
 ATP makes settlement a protocol-level state machine. It defines how value is escrowed, how assets are locked or consumed, how transaction states progress, how disputes and timeouts resolve, and how final settlement becomes canonical.
 
-Orina separates settlement authority from surrounding systems. Marketplaces, AI tools, logistics software, IoT signals, analytics modules, and user interfaces can operate around the protocol, but they do not define canonical settlement. The protocol remains the authority for escrow release, refunds, state transitions, receipt minting, and finalization.
+Orina separates settlement authority from application surfaces and external workflows. Those systems may prepare inputs or present transaction context, but they do not define canonical settlement. The protocol remains the authority for escrow release, refunds, state transitions, receipt minting, and finalization.
 
 ## Core Thesis
 
@@ -38,7 +38,7 @@ Commerce should be settlement-first. A transaction is reliable only when it has 
 - Not only a marketplace UI.
 - Not an AI assistant.
 - Not a generic DeFi primitive.
-- Not a logistics oracle.
+- Not an oracle or off-chain execution system.
 - Not a price discovery engine.
 
 ## Architecture Summary
@@ -47,7 +47,7 @@ Commerce should be settlement-first. A transaction is reliable only when it has 
 | --- | --- |
 | Asset representation | Creates structured on-chain asset identities and quantity state. |
 | Transaction and escrow | Handles order state, escrow, payment routing, refunds, timeout logic, disputes, and final settlement. |
-| Intelligence and verification | Lets AI, analytics, logistics, or delegated software assist execution under explicit constraints. |
+| Application context | Lets interfaces and delegated software prepare bounded actions under explicit constraints. |
 | Application and interface | Provides marketplace, dashboard, partner, and user workflows around the settlement core. |
 
 ## Core Smart Contract Modules

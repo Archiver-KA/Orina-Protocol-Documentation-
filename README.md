@@ -111,7 +111,7 @@ Excluded:
 
 ORI is a protocol coordination token used around ecosystem access, fees, participation, and future governance functions. ORI does not replace ATP and does not define transaction correctness; ATP is the settlement logic.
 
-See [DAO Fee Governance](./docs/protocol/dao-fee-governance.md) for the Hybrid DAO fee model: 1% ORI fee-token path, 2% supported stablecoin fee-token path, no protocol burn, and a 50% platform / 50% DAO allocation target.
+See [DAO Fee Governance](./docs/protocol/dao-fee-governance.md) for the Hybrid DAO fee model: 1% ORI fee-token path, 2% supported stablecoin fee-token path, no protocol burn, a 50% platform / 50% DAO ecosystem allocation target, and securities-law boundary language for DAO programs.
 
 See [ORI Tokenomics](./docs/project/tokenomics.md) for public token supply, allocation, vesting, fee-alignment, and reference valuation formulas.
 
