@@ -1,7 +1,7 @@
 # Orina Protocol: User Guide
-## The Safer Way to Trade Real-World Assets On-Chain
+## Trustless Settlement for Any Two-Party Commerce
 
-**Version:** 2.0.0
+**Version:** 3.0.0
 **Audience:** End Users
 **Last Updated:** June 2026
 
@@ -9,21 +9,38 @@
 
 ## What is Orina Protocol?
 
-Orina Protocol is a **trustless escrow platform** built specifically for real-world asset (RWA) commerce on blockchain. It lets buyers and sellers transact securely — no intermediary, no custodian, no trust required.
+Orina Protocol is a **trustless settlement layer** for any bilateral commerce — OTC trades, freelance services, digital goods, physical deliveries, or any deal between two parties who don't fully trust each other.
 
-Think of it as a neutral, automated settlement layer: funds are locked in a smart contract until both sides of a deal are satisfied. If something goes wrong, a neutral arbiter steps in. Everything is enforced by code, on-chain, with no single party in control.
+It doesn't care what you're trading. It cares that both sides are protected.
+
+Funds are locked in a smart contract the moment an order is created. Neither party can touch them until the deal resolves — through delivery confirmation, mutual agreement, or arbiter decision. Everything is enforced by code, on-chain, with no custodian in the middle.
+
+---
+
+## Who Is It For?
+
+| Use Case | How Orina Helps |
+|---|---|
+| **OTC Trading** | Sell crypto assets, tokens, or stablecoins P2P without relying on a centralized OTC desk |
+| **Freelance & Services** | Lock payment before work begins; release only when satisfied |
+| **Digital Goods** | Buy software licenses, data, or digital content with delivery protection |
+| **Physical Commerce** | Escrow payment while goods are in transit; dispute if delivery fails |
+| **AI Agent Commerce** | Let AI agents execute orders autonomously within strict spending limits you define |
+| **Any Bilateral Deal** | If it involves two parties exchanging value, Orina can settle it |
 
 ---
 
 ## The Problem We Solve
 
-Trading real assets on-chain — goods, property rights, tokenized commodities — carries real risks:
+Any time two parties who don't know each other try to trade, they face the same dilemma:
 
-- **You pay first** → the seller disappears with your money
+- **You pay first** → the other side disappears
 - **You deliver first** → the buyer refuses to pay
-- **Disputes drag on** → no clear resolution path
+- **Disputes happen** → no clear, enforceable resolution path
 
-Orina eliminates all three with a structured, time-bound escrow lifecycle that keeps every party accountable.
+Centralized solutions — escrow services, OTC desks, platforms — solve this by inserting a trusted middleman. That middleman charges high fees, requires identity verification, and is itself a point of failure.
+
+Orina removes the middleman entirely. The smart contract is the escrow agent. The protocol is the arbitration framework. No accounts, no KYC, no custodial risk.
 
 ---
 
@@ -31,81 +48,80 @@ Orina eliminates all three with a structured, time-bound escrow lifecycle that k
 
 ### Step 1 — Buyer Creates an Order
 
-The buyer proposes an order and their payment is immediately escrowed. Funds are locked in the smart contract — neither party can touch them.
+The buyer proposes an order. Their payment is immediately locked in the escrow contract. The seller can see the funds are secured before they do anything.
 
 ### Step 2 — Seller Confirms
 
-The seller has **24 hours** to confirm the order. They can accept the terms as-is, or propose revised delivery timing. If the seller revises, the buyer has **24 hours** to accept the new terms.
+The seller has **24 hours** to confirm. They can accept the terms as-is, or propose revised delivery timing. If revised, the buyer has **24 hours** to accept the new terms or walk away with a full refund.
 
 ### Step 3 — Delivery
 
-Once confirmed, the seller delivers within the agreed timeframe. The buyer can confirm receipt at any time during delivery.
+Once both sides commit, the seller delivers within the agreed timeframe. The buyer can confirm receipt at any point.
 
 ### Step 4 — Settlement
 
 ```
-Delivery confirmed?              Something went wrong?
+Buyer confirms delivery?         Something went wrong?
         │                                 │
         ▼                                 ▼
 Seller receives payment         Buyer opens a dispute
                                           │
                               ┌───────────┼───────────┐
                               │           │           │
-                         Arbiter      Agreement    Mutual
-                         Verdict       Between      Split
-                              │         Parties       │
-                         ┌────┴────┐                  │
-                         │         │                  │
-                    Buyer Wins  Seller Wins     Split Released
+                         Arbiter      Mutual       Mutual
+                         Verdict     Agreement      Split
+                              │
+                         ┌────┴────┐
+                         │         │
+                    Buyer Wins  Seller Wins
                          │         │
                     Full Refund  Full Payment
 ```
 
-### What Happens If Nobody Acts?
+### What If Nobody Acts?
 
-After the buyer action window (3 days after delivery), the protocol can automatically finalize in the seller's favor. This protects sellers from buyers who go silent after receiving goods.
+After the **3-day buyer action window** following delivery, the protocol auto-releases payment to the seller. This protects sellers from buyers who go silent after receiving goods or services.
+
+---
+
+## Order Timeline
+
+| Stage | Time Limit | If Missed |
+|---|---|---|
+| Seller confirmation | 24 hours | Auto-cancel, full refund to buyer |
+| Buyer re-sign (revised terms) | 24 hours | Auto-cancel, full refund to buyer |
+| Buyer action after delivery | 3 days | Auto-release payment to seller |
+| Dispute resolution | 14 days | Auto-split between parties |
+
+No orders get stuck. Every path has a defined outcome.
 
 ---
 
 ## Key Features
 
-| Feature | What It Means for You |
+| Feature | Detail |
 |---|---|
-| **Non-custodial** | Orina never holds your money — the smart contract does |
-| **RWA Receipts** | Finalized RWA orders mint a non-transferable on-chain receipt as proof of ownership |
-| **AI Agent Support** | Businesses can authorize AI agents to execute orders on their behalf — securely and within strict limits |
-| **Dispute Protection** | Multiple resolution paths: arbiter verdict, mutual agreement, or split settlement |
-| **Time-bound lifecycle** | Every stage has clear deadlines — no orders stuck in limbo indefinitely |
-| **Low fees** | 2% on stablecoin rails, 1% when paying in `$ORI` |
+| **Asset-agnostic** | Works for any bilateral trade — OTC, services, goods, digital assets |
+| **Non-custodial** | Your funds are held by the smart contract, not by Orina |
+| **On-chain receipts** | Finalized orders mint a non-transferable proof-of-settlement NFT |
+| **Structured dispute resolution** | Arbiter verdict, mutual agreement, split, or auto-split — no undefined outcomes |
+| **AI agent support** | Businesses can authorize AI agents to trade on their behalf within strict limits |
+| **No bridge risk** | Your escrow funds never leave the chain you chose |
 
 ---
 
-## Order Timeline at a Glance
+## AI Agent Delegation
 
-| Stage | Time Limit | What Happens If Missed |
-|---|---|---|
-| Seller confirmation | 24 hours | Order auto-cancels, buyer refunded |
-| Buyer re-sign (if terms revised) | 24 hours | Order auto-cancels, buyer refunded |
-| Buyer action after delivery | 3 days | Protocol auto-releases payment to seller |
-| Dispute resolution | 14 days | Stale dispute resolved via auto-split |
+If you run a business processing many orders, Orina supports **machine-to-machine (M2M) delegation**. You can authorize an AI agent to create orders, make payments, and confirm deliveries on your behalf — automatically.
 
----
+The agent operates within limits you set:
+- Maximum spend per order
+- Total spend cap across all orders
+- Specific counterparties only
+- Time-bounded sessions
+- Revocable at any time
 
-## RWA Receipts — Proof of Ownership
-
-When a Real World Asset transaction is finalized, Orina mints a **non-transferable receipt NFT** to the buyer. This receipt serves as on-chain evidence of finalized ownership — it cannot be sold or transferred, making it a clean ownership record rather than a tradeable token.
-
----
-
-## AI Agent Delegation (For Businesses)
-
-If you run a business that processes many orders, Orina supports **machine-to-machine (M2M) delegation**. You can authorize an AI agent to:
-
-- Create orders on your behalf
-- Pay for orders automatically
-- Confirm seller delivery
-
-The agent operates within strict limits you define — including spending caps, counterparty restrictions, and time bounds. Critically, **the agent never becomes the buyer or seller**. You remain the canonical owner. If the agent's session expires or is revoked, you retain full access to your orders, assets, and funds.
+**The agent never becomes the buyer or seller.** You remain the canonical party in every order, refund, and receipt. If the agent's session expires or you revoke it, you retain full control instantly.
 
 ---
 
@@ -113,61 +129,52 @@ The agent operates within strict limits you define — including spending caps, 
 
 | Payment Method | Protocol Fee |
 |---|---|
-| USDC / USDT (stablecoins) | 2% of transaction value |
-| `$ORI` token | 1% of transaction value |
+| USDC / USDT | 2% at settlement |
+| `$ORI` token | 1% at settlement |
 
-Fees are deducted at settlement, not upfront.
+Fees are deducted at settlement, not upfront. No fees on cancelled or refunded orders.
 
 ---
 
 ## The $ORI Token
 
-`$ORI` is the utility token of the Orina ecosystem.
+`$ORI` is Orina's utility token.
 
-- **Pay protocol fees at a discount** — 1% vs 2% for stablecoins
-- **Governance** — vote on protocol parameters, fee schedules, and upgrades
-- **Works across all chains** — move `$ORI` between BSC, Arbitrum, Base, and more without bridges or price slippage
-
----
-
-## Is It Safe?
-
-Orina's security posture is grounded in formal verification and internal audit:
-
-- **No confirmed Critical or High findings** in the internal contract audit (May 2026)
-- **All Medium and Low findings resolved** before the public baseline
-- **Reentrancy guards** on all settlement-sensitive code paths
-- **On-chain state is authoritative** — runtime applications are read-only projections of contract state
-- **AI delegate sessions are strictly bounded** — delegates cannot redirect refunds, dispute outcomes, or payouts
+- **Pay fees at half price** — 1% vs 2% for stablecoins
+- **Governance** — vote on fee schedules, protocol parameters, and upgrades
+- **Cross-chain** — move `$ORI` between any supported chain instantly, without bridges or slippage
 
 ---
 
-## Supported Chains & Assets
+## Supported Chains
 
-| Blockchain | Accepted Payment Assets |
+| Blockchain | Payment Assets |
 |---|---|
 | BNB Smart Chain (BSC) | USDT, USDC |
 | Arbitrum | USDC (native), USDT |
 | Base | USDC (native) |
 | Solana *(coming soon)* | USDC (native) |
 
-> Your funds always stay on the chain you choose. Orina does not route escrow funds through bridges.
+Your escrow funds always stay on the chain you choose. Orina does not route settlement funds through cross-chain bridges.
 
 ---
 
 ## Frequently Asked Questions
 
-**What happens if the seller never confirms?**
-The order auto-cancels after 24 hours and your payment is returned in full.
+**Is Orina only for RWA or tokenized assets?**
+No. Orina is a settlement layer for any bilateral trade. The protocol doesn't care what you're exchanging — it cares that both parties fulfill their commitments.
 
-**Can Orina freeze or seize my funds?**
+**What if the seller never confirms?**
+The order auto-cancels after 24 hours. Your payment is returned in full, automatically.
+
+**Can Orina freeze my funds?**
 No. The protocol is non-custodial. Only the smart contract logic — publicly audited — can move funds.
 
 **What if I'm an AI agent operator?**
-You can authorize AI wallets with precise spending limits, counterparty restrictions, and time windows. See the M2M Delegation documentation for technical details.
-
-**Can I use Orina for non-RWA trades?**
-The protocol is designed for RWA commerce but the escrow logic works for any bilateral exchange of value requiring trustless settlement.
+You can authorize AI wallets with precise spending limits, counterparty restrictions, and time windows. The AI agent never holds custody of your funds or becomes a party to contracts.
 
 **Do I need $ORI to use Orina?**
-No. Stablecoin payment is fully supported. `$ORI` gives you a 1% fee discount and governance rights.
+No. Stablecoin payment is fully supported. `$ORI` gives you a fee discount and governance rights.
+
+**What happens in a dispute if neither party agrees?**
+After 14 days without resolution, the protocol executes an automatic split. No order is permanently stuck.
