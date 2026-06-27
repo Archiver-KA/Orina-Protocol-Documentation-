@@ -8,11 +8,11 @@ source_status: Curated from Orina protocol, runtime, profile, and whitepaper sou
 
 ![Orina Protocol banner](./assets/images/orina-banner-github.jpg)
 
-**Deterministic settlement infrastructure for real-world asset commerce and autonomous transactions.**
+**The settlement layer for bilateral commerce.**
 
-Orina Protocol is a settlement-first infrastructure layer for real-world asset commerce. Its Atomic Transaction Protocol (ATP) defines escrow-backed transaction lifecycles, explicit state transitions, timeout paths, dispute handling, and canonical final settlement.
+Orina is a decentralized settlement protocol that enables any two independent parties to complete transactions without relying on trust, intermediaries, or platform-controlled enforcement.
 
-AI and automation may assist sourcing, evaluation, and execution, but they do not define settlement. ATP remains the authority for escrow release, refunds, receipt minting, and final transaction state.
+Orina guarantees one canonical settlement outcome for every bilateral transaction. Parties agree to programmable settlement conditions before execution begins; once those conditions are satisfied, settlement executes deterministically.
 
 ## Official Links
 
@@ -29,14 +29,41 @@ AI and automation may assist sourcing, evaluation, and execution, but they do no
 | Telegram global | https://t.me/orinaglobal |
 | Email | info@orina.io |
 
-## What Orina Provides
+## Why Orina Exists
 
-- Deterministic ATP settlement for RWA commerce.
-- Per-order escrow, timeout, dispute, refund, and finalization logic.
-- Asset quantity locking and post-settlement receipt minting.
-- Formal artifacts for lifecycle and delegated authority checks.
-- Bounded M2M delegation for autonomous commerce without making AI the authority.
-- Runtime documentation for the public marketplace application and wallet flows.
+Digital commerce still depends on trusted intermediaries. Whether parties are exchanging assets, paying for services, purchasing goods, or coordinating automated systems, settlement often depends on centralized platforms, escrow providers, or manual dispute resolution.
+
+These approaches increase cost, reduce transparency, and create single points of failure. Orina replaces trust with deterministic settlement rules executed directly by protocol.
+
+## What Orina Does
+
+Orina standardizes the settlement path for bilateral transactions:
+
+- Agreement: both parties accept programmable settlement conditions before execution.
+- Asset commitment: the transaction value or deliverable is committed to the flow.
+- Condition verification: agreed conditions, deadlines, and dispute paths are evaluated.
+- Deterministic settlement: the transaction reaches exactly one canonical final outcome.
+
+## Core Principles
+
+- Deterministic Settlement: every transaction reaches exactly one final state.
+- Trust-Minimized: neither party needs to trust the other.
+- Programmable Conditions: settlement logic is defined before execution.
+- Composable: marketplaces, wallets, AI systems, and enterprise applications can integrate Orina.
+- Permissionless: anyone can build on the protocol.
+
+## Where Orina Can Be Used
+
+| Area | Examples |
+| --- | --- |
+| Commerce | Goods, service payments, procurement, cross-border transactions |
+| Financial | OTC trading, escrow, asset exchange |
+| AI Economy | AI agent commerce, autonomous payments, machine-to-machine settlement |
+| Assets | Digital assets, physical assets, tokenized assets |
+
+## What Orina Is Not
+
+Orina is not a marketplace, escrow provider, or payment gateway. It is a settlement protocol that marketplaces, AI agents, wallets, and commerce platforms can integrate as infrastructure.
 
 ## Documentation
 

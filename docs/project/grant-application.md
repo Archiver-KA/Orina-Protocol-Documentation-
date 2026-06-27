@@ -11,14 +11,14 @@
 ## 1. Project Overview
 
 **Project Name:** Orina Protocol
-**Category:** DeFi Infrastructure / Settlement Layer / AI-Native Commerce
+**Category:** Settlement Infrastructure / Bilateral Commerce Protocol
 **Stage:** Deployed on BSC — Expanding to EVM Ecosystem
 
-Orina Protocol is a **trustless, asset-agnostic bilateral settlement layer** — a composable escrow primitive that enforces structured transaction lifecycles between any two parties, regardless of what they are exchanging.
+Orina Protocol is a **decentralized settlement layer for bilateral commerce**. It enables any two independent parties to complete transactions without relying on trust, intermediaries, or platform-controlled enforcement.
 
-The protocol does not prescribe what is being traded. It enforces *how* trades settle: with cryptographic escrow, explicit state transitions, time-bound commitments, on-chain dispute resolution, and bounded AI agent delegation. Whether the underlying transaction is an OTC crypto trade, a freelance service agreement, a digital goods delivery, or an autonomous AI agent purchase — Orina provides the same settlement guarantees.
+The protocol does not prescribe what is being traded. It enforces *how* transactions settle: both parties agree to programmable settlement conditions before execution begins, and the protocol resolves the transaction into one canonical outcome once those conditions are satisfied.
 
-This positioning matters. Orina is not a vertical application for a specific asset class. It is **infrastructure**: a settlement primitive that any marketplace, OTC desk, AI agent system, or two-party application can integrate without rebuilding escrow logic from scratch.
+This positioning matters. Orina is not a vertical application for a specific asset class. It is **infrastructure**: a settlement protocol that any marketplace, OTC desk, AI agent system, wallet, or two-party commerce application can integrate without rebuilding settlement logic from scratch.
 
 ---
 
@@ -26,7 +26,7 @@ This positioning matters. Orina is not a vertical application for a specific ass
 
 ### The Missing Settlement Primitive
 
-Blockchain has robust infrastructure for token issuance, liquidity provision, lending, and derivatives. What it lacks is a **general-purpose, trustless settlement layer for bilateral commerce** — a primitive that answers the fundamental question every two-party trade faces:
+Digital commerce has robust infrastructure for discovery, payment initiation, messaging, and application workflows. What it lacks is a **general-purpose, deterministic settlement layer for bilateral commerce** — a primitive that answers the fundamental question every two-party transaction faces:
 
 > *How do we ensure both sides fulfill their commitment without trusting each other or a third party?*
 
@@ -36,14 +36,14 @@ This gap manifests across multiple markets today:
 
 **Service Commerce** — freelance platforms extract 10–20% fees precisely because they are the trusted settlement intermediary. The fee is not for matching — it's for enforcement. A trustless settlement layer eliminates the enforcement cost.
 
-**AI Agent Commerce** — autonomous AI systems are beginning to participate in digital marketplaces. They need to create orders, make payments, and manage positions programmatically. No existing protocol provides the cryptographic session binding, spending-cap enforcement, and root-identity preservation required for safe, auditable AI agent commerce.
+**AI Agent Commerce** — autonomous software systems are beginning to participate in digital marketplaces. They need to create orders, make payments, and manage positions programmatically. No existing protocol provides the session binding, spending-cap enforcement, and root-identity preservation required for safe, auditable agent commerce.
 
-**Cross-border P2P** — international peer-to-peer transactions have no neutral settlement layer. Traditional escrow requires jurisdiction, legal identity, and banking access. On-chain settlement requires none of these.
+**Cross-border P2P** — international peer-to-peer transactions have no neutral settlement layer. Traditional escrow requires jurisdiction, legal identity, and banking access.
 
 ### Why Existing Solutions Fall Short
 
 - **Centralized escrow services** — custodial risk, KYC requirements, single jurisdiction, high fees (2–5%)
-- **Simple smart contract escrow** — no dispute resolution, no timeout handling, no AI agent support, no structured lifecycle
+- **Simple escrow logic** — no standardized lifecycle, dispute path, timeout handling, or programmable settlement model
 - **RWA-specific protocols** — vertically scoped, require asset tokenization as a precondition, not composable as general infrastructure
 
 ---
@@ -121,9 +121,9 @@ createOrder → [PENDING_CONFIRM] → sellerConfirm → [PAID] → delivery → 
 
 No dispute is permanently unresolved. Every path has a defined terminal state.
 
-### 3.5. M2M Delegation — AI-Native Commerce
+### 3.5. M2M Delegation — Bounded Autonomous Execution
 
-The M2M delegation layer is Orina's most strategically differentiated feature. It enables AI agents and automated systems to execute orders on behalf of root users — without the agent becoming a protocol party or gaining custody of funds.
+The M2M delegation layer enables automated systems to execute permitted actions on behalf of root users without becoming a protocol party or gaining custody of funds.
 
 **Session binding parameters:**
 
@@ -143,7 +143,7 @@ The M2M delegation layer is Orina's most strategically differentiated feature. I
 
 **Explicitly excluded from delegation:** `confirmDelivery`, `openDispute`, `cancelByBuyer`, `cancelBySeller` — root direct-action paths always remain available.
 
-This design makes Orina the only escrow protocol with production-grade, cryptographically bounded AI agent delegation where root identity is preserved throughout.
+This design gives Orina a bounded delegation model where root identity is preserved throughout the transaction lifecycle.
 
 ### 3.6. Fee Model
 
@@ -165,7 +165,7 @@ The asset-agnostic design opens Orina to multiple markets immediately — withou
 | **Crypto OTC trading** | Centralized OTC desks, Telegram trust | Trustless, non-custodial, auditable |
 | **Freelance & service commerce** | Platform intermediaries (10–20% fee) | Protocol fee 1–2%, no platform custodian |
 | **Digital goods** | Payment processors, platform refund policies | Delivery-gated release, dispute path |
-| **AI agent commerce** | None — unsolved problem | Native M2M delegation with spend caps |
+| **AI agent commerce** | Emerging custom workflows | Bounded M2M delegation with spend caps |
 | **Cross-border P2P** | Wire transfer, hawala, informal trust | On-chain finality, no banking required |
 | **Any bilateral deal** | Varies — often no trustless option | Composable primitive for any integrator |
 
@@ -213,7 +213,7 @@ Available at `artifacts/formal/atp/` in the public documentation repository:
 | ATP v3.4 deployed on BSC | ✅ Live |
 | Internal security audit completed | ✅ May 2026 |
 | Formal verification artifacts published | ✅ Public |
-| M2M delegation v1 (AI agent support) | ✅ Live |
+| M2M delegation v1 (bounded agent support) | ✅ Live |
 | Public documentation repository | ✅ Published |
 | Arbitrum native deployment (ATP v3.5) | 🔄 In development |
 | Base + Coinbase KYC integration | 🗓 Q4 2026 |
@@ -238,15 +238,15 @@ Available at `artifacts/formal/atp/` in the public documentation repository:
 |---|---|---|---|
 | **Phase 1 — EVM Expansion** | Q3 2026 | ATP v3.5 on Arbitrum, LayerZero V2 OFT | Third-party audit of EVM contracts |
 | **Phase 2 — Base Deployment** | Q4 2026 | Native instance on Base, Coinbase KYC/AML for enterprise compliance | Identity + escrow flow audit |
-| **Phase 3 — SVM Expansion** | Q1–Q2 2027 | Full ATP rewrite in Rust/Anchor for Solana, extended AI agent M2M | Anchor program audit |
+| **Phase 3 — SVM Expansion** | Q1–Q2 2027 | Full ATP rewrite in Rust/Anchor for Solana, extended bounded M2M | Anchor program audit |
 
 ---
 
 ## 9. Why This Grant
 
-Orina addresses infrastructure that DeFi is missing rather than adding another application on top of existing primitives. A trustless, composable settlement layer with formal verification and AI agent delegation is not a marginal improvement — it is a missing layer that many applications need but none of them want to build themselves.
+Orina addresses settlement infrastructure rather than adding another marketplace or payment application. A composable bilateral settlement layer with formal verification and bounded delegation is not a marginal improvement — it is a missing layer that many applications need but none of them want to build themselves.
 
-Grant support at this stage directly funds the independent third-party audit that is the single most critical prerequisite for ecosystem integrators, institutional OTC participants, and AI agent platform operators to adopt Orina as their settlement layer.
+Grant support at this stage directly funds the independent third-party audit that is the single most critical prerequisite for ecosystem integrators, institutional OTC participants, and agent-commerce platforms to adopt Orina as their settlement layer.
 
 We commit to open-sourcing the core contract system, publishing all audit reports publicly, and making the ATP settlement primitive available as composable infrastructure for any builder in this ecosystem.
 

@@ -6,11 +6,22 @@ status: Public documentation baseline
 source_baseline: Public ATP v3.5 beta runtime and contract documentation
 ---
 
-Orina ATP is an escrowed bilateral transaction protocol for real-world asset marketplace flows. The protocol coordinates asset inventory, buyer payment escrow, seller confirmation, delivery timing, dispute settlement, receipt minting, fee distribution, and optional delegated machine-to-machine execution.
+Orina ATP is the deterministic settlement core of Orina Protocol. It standardizes how two independent parties move from agreement to commitment, condition verification, and one canonical settlement outcome.
+
+This page describes the current technical implementation of that settlement core. It intentionally treats marketplace surfaces, asset-specific flows, automation, and fee logic as integration or implementation layers around the protocol thesis, not as the definition of Orina itself.
 
 ## Current Public Runtime
 
 The current public runtime reference is ATP v3.5 beta on BSC Testnet. The primary EIP-712 order domain still uses `MarketplaceATP` version `3.4` for signature compatibility, and the public runtime app is documented in [Runtime App](../runtime/live-app.md).
+
+## Settlement Flow
+
+| Step | Protocol Meaning |
+| --- | --- |
+| Agreement | Parties accept programmable settlement conditions. |
+| Asset Commitment | Payment, asset, or service commitment is bound to the transaction. |
+| Condition Verification | Confirmations, deadlines, and dispute paths are evaluated. |
+| Deterministic Settlement | ATP resolves the transaction into exactly one final outcome. |
 
 ## Main Protocol Roles
 
