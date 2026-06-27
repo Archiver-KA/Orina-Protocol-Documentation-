@@ -1,7 +1,7 @@
 # Runtime App
 
 ---
-date: 2026-06-26
+date: 2026-06-27
 status: Public runtime reference
 runtime: ATP v3.5 beta
 network: BSC Testnet
@@ -64,7 +64,7 @@ Version notes:
 | `USDC.t` | `0xD6E84789741Ea2DE727961cCB383454E4A845035` |
 | Testnet faucet | `0xbbD53C18F4d9fb98AA6c4837ea0E8F221e1b5F0F` |
 
-The Base Sepolia deployment is testnet-only. Its current deployment requires a separate governance-role handoff before it can serve as a mainnet deployment template.
+The Base Sepolia deployment is testnet-only. The current Marketplace governance actor is the Base Sepolia timelock `0x989b893118237f710b7Efc8820147B61c68DcaEE`; the remaining shared hardening item is M2M `DelegationManager.DEFAULT_ADMIN_ROLE`, which is still held by deployment/admin EOA `0x282Be18838D7079C215F49749a9606d77e00888b` on both testnets. Do not treat either testnet deployment as a mainnet template until M2M admin handoff, deployer-role review, and production owner sign-off are complete.
 
 ## Core Contracts
 

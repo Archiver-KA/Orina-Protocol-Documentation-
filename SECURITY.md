@@ -1,7 +1,7 @@
 # Security Policy
 
 ---
-date: 2026-05-27
+date: 2026-06-27
 status: Public repository policy
 ---
 
@@ -31,4 +31,4 @@ Out of scope for this documentation repository:
 
 ## Source Security Model
 
-See [Security Model](./docs/security/security-model.md) for the current public summary of contract and runtime security assumptions.
+See [Security Model](./docs/security/security-model.md) for the public contract and runtime security assumptions, [Security Status](./docs/security/security-status-2026-06-27.md) for the current internal assurance status, and [Mainnet Production Checklist](./docs/security/mainnet-production-checklist.md) for production-readiness gates.

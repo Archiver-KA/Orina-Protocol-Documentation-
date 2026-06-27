@@ -54,6 +54,9 @@ AI and automation may assist sourcing, evaluation, and execution, but they do no
 | Live runtime app | [Runtime App](./docs/runtime/live-app.md) |
 | Security | [Security Model](./docs/security/security-model.md) |
 | Internal audit | [Internal Audit Summary](./docs/security/internal-audit-summary.md) |
+| Security status | [Security Status](./docs/security/security-status-2026-06-27.md) |
+| Testnet addresses | [Testnet Deployment Addresses](./docs/runtime/testnet-deployment-addresses.md) |
+| Mainnet checklist | [Mainnet Production Checklist](./docs/security/mainnet-production-checklist.md) |
 | Formal methods | [Formal Verification](./docs/formal/formal-verification.md) |
 | Bytecode | [Formal Bytecode](./docs/formal/bytecode.md) |
 | Glossary | [Glossary](./docs/reference/glossary.md) |
@@ -71,7 +74,7 @@ The bytecode files are documented with SHA-256 hashes in [Formal Bytecode](./doc
 
 ## Security And Audit
 
-The ATP contract system and runtime application have completed internal security review passes. See [Internal Audit Summary](./docs/security/internal-audit-summary.md) for scope, results, verification references, and limitations.
+The ATP contract system and runtime application have completed internal security review passes. See [Internal Audit Summary](./docs/security/internal-audit-summary.md) and [Security Status](./docs/security/security-status-2026-06-27.md) for scope, results, verification references, and limitations.
 
 This is an internal audit summary, not an external audit certificate.
 

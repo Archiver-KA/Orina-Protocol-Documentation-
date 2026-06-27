@@ -1,7 +1,7 @@
 # Internal Audit Summary
 
 ---
-date: 2026-05-27
+date: 2026-06-27
 status: Public internal audit summary
 audit_type: Internal security review
 ---
@@ -118,13 +118,18 @@ Runtime verification references from the internal review include:
 ## Current Public Posture
 
 - Internal review has been completed for the documented ATP contract and runtime source baseline.
+- A newer non-human contract baseline is recorded on 2026-06-27: Foundry passes at 110/110 after dispute-settlement hardening; Slither has no High/Medium impact findings after current triage; Echidna, Medusa, and deep invariants pass; Mythril runtime-bytecode findings are source-triaged with no confirmed exploitable issue; and the initial Certora `FeeManager` proof passes.
 - Public documentation includes formal artifacts, bytecode hashes, contract responsibilities, runtime references, and security assumptions.
 - The project should not be represented as externally audited unless an independent third-party report is published.
 - Public vulnerability intake remains an owner decision until a dedicated reporting address or process is published.
+- Production remains gated by broader formal coverage, human review, governance handoff, payment-token policy, ORI quote/oracle policy, monitoring, and incident runbooks.
 
 ## Related Documents
 
 - [Security Model](./security-model.md)
+- [Security Status](./security-status-2026-06-27.md)
+- [Mainnet Production Checklist](./mainnet-production-checklist.md)
+- [Testnet Deployment Addresses](../runtime/testnet-deployment-addresses.md)
 - [Formal Verification](../formal/formal-verification.md)
 - [Formal Bytecode](../formal/bytecode.md)
 - [Runtime App](../runtime/live-app.md)

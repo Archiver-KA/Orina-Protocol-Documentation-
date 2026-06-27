@@ -16,6 +16,9 @@ This hub organizes the public Orina Protocol documentation set.
 - [Runtime Overview](./runtime/overview.md)
 - [Security Model](./security/security-model.md)
 - [Internal Audit Summary](./security/internal-audit-summary.md)
+- [Security Status](./security/security-status-2026-06-27.md)
+- [Mainnet Production Checklist](./security/mainnet-production-checklist.md)
+- [Testnet Deployment Addresses](./runtime/testnet-deployment-addresses.md)
 - [Official Links](./reference/official-links.md)
 - [Glossary](./reference/glossary.md)
 
@@ -42,6 +45,8 @@ This hub organizes the public Orina Protocol documentation set.
 
 - [Internal Audit Summary](./security/internal-audit-summary.md)
 - [Security Model](./security/security-model.md)
+- [Security Status](./security/security-status-2026-06-27.md)
+- [Mainnet Production Checklist](./security/mainnet-production-checklist.md)
 - [Formal Verification](./formal/formal-verification.md)
 - [Formal Bytecode](./formal/bytecode.md)
 - [Formal Artifacts README](../artifacts/formal/atp/README.md)
