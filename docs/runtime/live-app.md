@@ -1,7 +1,7 @@
 # Runtime App
 
 ---
-date: 2026-06-27
+date: 2026-06-28
 status: Public runtime reference
 runtime: ATP v3.5 beta
 network: BSC Testnet
@@ -11,7 +11,7 @@ The public Orina runtime app is available at:
 
 - https://app.orina.io/
 
-This page distinguishes the active public runtime from the latest contract deployment. The public runtime remains ATP v3.5 beta on BSC Testnet; Base Sepolia is a deployed contract integration target and is not yet the default write-enabled app network.
+This page distinguishes the active public runtime from testnet deployment targets. The public runtime remains ATP v3.5 beta on BSC Testnet; Base Sepolia is a deployed contract integration target and is not yet the default write-enabled app network. Arbitrum Sepolia is opened as the next testnet deployment path, but no canonical ATP contracts have been broadcast there yet.
 
 ## Current Runtime
 
@@ -65,6 +65,20 @@ Version notes:
 | Testnet faucet | `0xbbD53C18F4d9fb98AA6c4837ea0E8F221e1b5F0F` |
 
 The Base Sepolia deployment is testnet-only. The current Marketplace governance actor is the Base Sepolia timelock `0x989b893118237f710b7Efc8820147B61c68DcaEE`; the remaining shared hardening item is M2M `DelegationManager.DEFAULT_ADMIN_ROLE`, which is still held by deployment/admin EOA `0x282Be18838D7079C215F49749a9606d77e00888b` on both testnets. Do not treat either testnet deployment as a mainnet template until M2M admin handoff, deployer-role review, and production owner sign-off are complete.
+
+## Arbitrum Sepolia Deployment Path
+
+| Field | Value |
+| --- | --- |
+| Deployment status | Network and runbook opened; no canonical ATP contract addresses yet. |
+| Network | Arbitrum Sepolia |
+| Chain id | `421614` |
+| RPC URL | `https://sepolia-rollup.arbitrum.io/rpc` |
+| Explorer | https://sepolia.arbiscan.io |
+| Namespace | `orina-atp-v3.5-arbitrum-sepolia-20260628` |
+| Runtime app writes | Disabled until chain `421614` broadcast artifacts and bytecode checks exist. |
+
+Do not mirror BSC Testnet or Base Sepolia addresses into Arbitrum Sepolia documentation or app config. Fill Arbitrum addresses only from Foundry broadcast artifacts produced on chain `421614`.
 
 ## Core Contracts
 

@@ -1,7 +1,7 @@
 # Testnet Deployment Addresses
 
 ---
-date: 2026-06-27
+date: 2026-06-28
 status: Public testnet address sheet
 ---
 
@@ -51,6 +51,22 @@ Chain ID: `84532`
 
 Base Sepolia starter-kit assets: `ORI=0xd87493F4C02AAD2c67Ce12aa534d188Bf44FCCAB`, `USDT.t=0x11E6c8f2806b32DaC427E7dF07F67602647Ef87a`, `USDC.t=0xd6e84789741ea2DE727961CCB383454e4A845035`, `OrinaTestTokenFaucet=0xbBd53C18F4d9fb98aA6c4837Ea0E8F221E1B5F0F`.
 
+## Arbitrum Sepolia
+
+Chain ID: `421614`
+
+| Field | Value |
+| --- | --- |
+| Status | Network and deployment path opened; no canonical ATP contract addresses yet. |
+| RPC URL | `https://sepolia-rollup.arbitrum.io/rpc` |
+| Explorer | `https://sepolia.arbiscan.io` |
+| Namespace | `orina-atp-v3.5-arbitrum-sepolia-20260628` |
+| Phase 1 artifact path | `foundry/broadcast/DeployArbitrumSepoliaPhase1.s.sol/421614/run-latest.json` |
+| Core artifact path | `foundry/broadcast/DeployFullSystemDirect.s.sol/421614/run-latest.json` |
+| M2M artifact path | `foundry/broadcast/DeployM2MSystem.s.sol/421614/run-latest.json` |
+
+Do not copy BSC Testnet or Base Sepolia addresses into this section. Add contract addresses only after chain `421614` broadcast artifacts exist and bytecode checks pass.
+
 ## On-Chain Spot Checks
 
 Checked on 2026-06-27:
@@ -59,3 +75,4 @@ Checked on 2026-06-27:
 - `MarketplaceATP.delegationManager()` returns the listed DelegationManager on both networks.
 - Each DelegationManager grants `CONSUMER_ROLE` to its listed Marketplace.
 - M2M `DelegationManager.DEFAULT_ADMIN_ROLE` remains with deployment/admin EOA `0x282Be18838D7079C215F49749a9606d77e00888b` on both testnets; production requires governance handoff.
+- Arbitrum Sepolia is not spot-checked yet because no chain `421614` ATP broadcast artifact exists.
