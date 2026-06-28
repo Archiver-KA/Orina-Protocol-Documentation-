@@ -57,7 +57,7 @@ Chain ID: `421614`
 
 | Field | Value |
 | --- | --- |
-| Status | Network and deployment path opened; no canonical ATP contract addresses yet. |
+| Status | Contracts broadcast and bytecode spot-checked; runtime writes remain disabled pending Marketplace M2M governance wiring. |
 | RPC URL | `https://sepolia-rollup.arbitrum.io/rpc` |
 | Explorer | `https://sepolia.arbiscan.io` |
 | Namespace | `orina-atp-v3.5-arbitrum-sepolia-20260628` |
@@ -65,14 +65,31 @@ Chain ID: `421614`
 | Core artifact path | `foundry/broadcast/DeployFullSystemDirect.s.sol/421614/run-latest.json` |
 | M2M artifact path | `foundry/broadcast/DeployM2MSystem.s.sol/421614/run-latest.json` |
 
-Do not copy BSC Testnet or Base Sepolia addresses into this section. Add contract addresses only after chain `421614` broadcast artifacts exist and bytecode checks pass.
+| Contract | Address |
+| --- | --- |
+| `UnitRegistry` | `0x5a709d6f4F0a084315C64272FFc158Dc61F0De38` |
+| `FeeManager` | `0x51aB383A43d79f4127B7E7dCBcd892164FA2838F` |
+| `OrinaRWA` | `0x0a9efc1fb95be24743b1452ac4c974E5E925A453` |
+| `MarketplaceATP` | `0x6d132Ba2327573c4e6f97a2167dCddb8059C4d14` |
+| `PaymentGateway` | `0x1A880Ae46993282dd77C2dDCc5e36498eB616C92` |
+| `DisputeManager` | `0x952aE0562De695c63c1386458DB537193Ce293b4` |
+| `AutoTimeManager` | `0xa12273AD5b73c5F57139e84aa89Db52FE7Af05de` |
+| `RWAReceiptNFT` | `0x82d2f4e131d1EB34F9B6Ebc8CC37bdD1cca84e95` |
+| `ShippingRegistry` | `0x50fD56DcA706471B7f0Ab59051006aA2712c2DF2` |
+| `TimelockController` | `0x5C842728C357B9b18eb8A9A7a840499936132e67` |
+| `DelegationManager` | `0x52440e44ec34a64e19b92243262fe47819d65539` |
+| `AIWalletFactoryV2` | `0x7D6b498eDc3F469ED020116e8892EbB361753bCB` |
+
+Arbitrum Sepolia starter-kit assets: `ORI=0xD87493f4C02aad2c67Ce12aa534d188Bf44FCcAB`, `USDT.t=0x11E6c8f2806b32dAC427E7Df07F67602647eF87A`, `USDC.t=0xD6E84789741Ea2DE727961cCB383454E4A845035`, `OrinaTestTokenFaucet=0xbbD53C18F4d9fb98AA6c4837ea0E8F221e1b5F0F`.
+
+Pending governance call: target `0x6d132Ba2327573c4e6f97a2167dCddb8059C4d14`, function `setDelegationManager(address)`, calldata `0x1a8d0de200000000000000000000000052440e44ec34a64e19b92243262fe47819d65539`.
 
 ## On-Chain Spot Checks
 
-Checked on 2026-06-27:
+Checked on 2026-06-28:
 
-- `MarketplaceATP`, `PaymentGateway`, and `DelegationManager` have deployed bytecode on both networks.
-- `MarketplaceATP.delegationManager()` returns the listed DelegationManager on both networks.
+- `MarketplaceATP`, `PaymentGateway`, and `DelegationManager` have deployed bytecode on BSC Testnet, Base Sepolia, and Arbitrum Sepolia.
+- BSC Testnet and Base Sepolia `MarketplaceATP.delegationManager()` return the listed DelegationManager.
+- Arbitrum Sepolia `MarketplaceATP.delegationManager()` is still zero until the pending governance call above is executed.
 - Each DelegationManager grants `CONSUMER_ROLE` to its listed Marketplace.
-- M2M `DelegationManager.DEFAULT_ADMIN_ROLE` remains with deployment/admin EOA `0x282Be18838D7079C215F49749a9606d77e00888b` on both testnets; production requires governance handoff.
-- Arbitrum Sepolia is not spot-checked yet because no chain `421614` ATP broadcast artifact exists.
+- Arbitrum Sepolia `DelegationManager.DEFAULT_ADMIN_ROLE` is held by its timelock, not the deployer EOA.
