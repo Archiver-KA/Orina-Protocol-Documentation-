@@ -1,7 +1,7 @@
 # Runtime App
 
 ---
-date: 2026-06-28
+date: 2026-06-29
 status: Public runtime reference
 runtime: ATP v3.5 beta
 network: BSC Testnet
@@ -11,7 +11,7 @@ The public Orina runtime app is available at:
 
 - https://app.orina.io/
 
-This page distinguishes the active public runtime from testnet deployment targets. The public runtime remains ATP v3.5 beta on BSC Testnet; Base Sepolia is a deployed contract integration target and is not yet the default write-enabled app network. Arbitrum Sepolia contracts are deployed and bytecode-checked, but runtime writes stay disabled until the pending Marketplace M2M governance wiring is executed.
+This page distinguishes the active public runtime from testnet deployment targets. The public runtime remains ATP v3.5 beta on BSC Testnet by default; Base Sepolia and Arbitrum Sepolia are deployed write-enabled testnet targets in the runtime network selector.
 
 ## Current Runtime
 
@@ -64,36 +64,36 @@ Version notes:
 | `USDC.t` | `0xD6E84789741Ea2DE727961cCB383454E4A845035` |
 | Testnet faucet | `0xbbD53C18F4d9fb98AA6c4837ea0E8F221e1b5F0F` |
 
-The Base Sepolia deployment is testnet-only. The current Marketplace governance actor is the Base Sepolia timelock `0x989b893118237f710b7Efc8820147B61c68DcaEE`; the remaining shared hardening item is M2M `DelegationManager.DEFAULT_ADMIN_ROLE`, which is still held by deployment/admin EOA `0x282Be18838D7079C215F49749a9606d77e00888b` on both testnets. Do not treat either testnet deployment as a mainnet template until M2M admin handoff, deployer-role review, and production owner sign-off are complete.
+The Base Sepolia deployment is testnet-only. The current Marketplace governance actor is the Base Sepolia timelock `0x989b893118237f710b7Efc8820147B61c68DcaEE`; the remaining shared hardening item is M2M `DelegationManager.DEFAULT_ADMIN_ROLE`, which is still held by deployment/admin EOA `0x282Be18838D7079C215F49749a9606d77e00888b` on BSC Testnet and Base Sepolia. Do not treat either testnet deployment as a mainnet template until M2M admin handoff, deployer-role review, and production owner sign-off are complete.
 
 ## Arbitrum Sepolia Contract Deployment
 
 | Field | Value |
 | --- | --- |
-| Deployment status | Contracts deployed; runtime app writes remain disabled pending Marketplace M2M governance wiring. |
+| Deployment status | Contracts deployed, bytecode-checked, M2M-linked, and write-enabled for testnet. |
 | Network | Arbitrum Sepolia |
 | Chain id | `421614` |
 | RPC URL | `https://sepolia-rollup.arbitrum.io/rpc` |
 | Explorer | https://sepolia.arbiscan.io |
-| Namespace | `orina-atp-v3.5-arbitrum-sepolia-20260628` |
-| Runtime app writes | Disabled until timelock executes `MarketplaceATP.setDelegationManager(address)`. |
+| Namespace | `orina-atp-v3.5-arbitrum-sepolia-eoa-testnet-20260629` |
+| Runtime app writes | Enabled for testnet only. |
 
 | Contract | Address |
 | --- | --- |
-| `MarketplaceATP` | `0x6d132Ba2327573c4e6f97a2167dCddb8059C4d14` |
-| `OrinaRWA` | `0x0a9efc1fb95be24743b1452ac4c974E5E925A453` |
-| `RWAReceiptNFT` | `0x82d2f4e131d1EB34F9B6Ebc8CC37bdD1cca84e95` |
-| `PaymentGateway` | `0x1A880Ae46993282dd77C2dDCc5e36498eB616C92` |
-| `FeeManager` | `0x51aB383A43d79f4127B7E7dCBcd892164FA2838F` |
-| `DisputeManager` | `0x952aE0562De695c63c1386458DB537193Ce293b4` |
-| `AutoTimeManager` | `0xa12273AD5b73c5F57139e84aa89Db52FE7Af05de` |
-| `UnitRegistry` | `0x5a709d6f4F0a084315C64272FFc158Dc61F0De38` |
-| `ShippingRegistry` | `0x50fD56DcA706471B7f0Ab59051006aA2712c2DF2` |
-| `TimelockController` | `0x5C842728C357B9b18eb8A9A7a840499936132e67` |
-| `DelegationManager` | `0x52440e44ec34a64e19b92243262fe47819d65539` |
-| `AIWalletFactoryV2` | `0x7D6b498eDc3F469ED020116e8892EbB361753bCB` |
+| `MarketplaceATP` | `0x5863f25A8250EBe20Bd1E3d04FD796081Fc3D72E` |
+| `OrinaRWA` | `0x0244Ad5ca0BC9Cd8555352Cd53Dc51Fd8eD2f011` |
+| `RWAReceiptNFT` | `0x6A695E8356b6F80664E31402038CbBdBCfffa816` |
+| `PaymentGateway` | `0x39F539903b75A0bF0FEF16a443904C8c9DF787EE` |
+| `FeeManager` | `0x0c4AccB88E2Cc530FEFBAb31Ca77371a2a68Ba20` |
+| `DisputeManager` | `0xEE36B67BE61A37672D4ae041A89aEd12B333753E` |
+| `AutoTimeManager` | `0x75ac6efE7483c03B971Fb8E635dEE8ed8D527c61` |
+| `UnitRegistry` | `0x37D917202211492523659e83010300A444D62C91` |
+| `ShippingRegistry` | `0x63f85795fAc0F76831a3eB14Dc7729A4052fe7F7` |
+| `TimelockController` | `0x66Bf76Fdf268976080f119278982B082f417FbAD` |
+| `DelegationManager` | `0x56D454f55D5d05b060777F70e653BbBEb1167D2e` |
+| `AIWalletFactoryV2` | `0x143519194A9Df4678b602BEE329C1A96381d1CBD` |
 
-Pending governance call: target `0x6d132Ba2327573c4e6f97a2167dCddb8059C4d14`, function `setDelegationManager(address)`, calldata `0x1a8d0de200000000000000000000000052440e44ec34a64e19b92243262fe47819d65539`.
+Arbitrum Sepolia governance note: this testnet uses deployer EOA `0x282Be18838D7079C215F49749a9606d77e00888b` as the timelock proposer, executor, canceller, and admin with zero delay because the current multisig flow cannot sign on Arbitrum Sepolia. Mainnet must redeploy with the production multisig/Safe, non-zero timelock delay, and a new address set.
 
 ## Core Contracts
 

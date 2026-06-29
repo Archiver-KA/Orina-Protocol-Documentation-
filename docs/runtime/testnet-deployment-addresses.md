@@ -1,7 +1,7 @@
 # Testnet Deployment Addresses
 
 ---
-date: 2026-06-28
+date: 2026-06-29
 status: Public testnet address sheet
 ---
 
@@ -57,39 +57,38 @@ Chain ID: `421614`
 
 | Field | Value |
 | --- | --- |
-| Status | Contracts broadcast and bytecode spot-checked; runtime writes remain disabled pending Marketplace M2M governance wiring. |
+| Status | Contracts broadcast, bytecode spot-checked, M2M-linked, and write-enabled for testnet. |
 | RPC URL | `https://sepolia-rollup.arbitrum.io/rpc` |
 | Explorer | `https://sepolia.arbiscan.io` |
-| Namespace | `orina-atp-v3.5-arbitrum-sepolia-20260628` |
+| Namespace | `orina-atp-v3.5-arbitrum-sepolia-eoa-testnet-20260629` |
 | Phase 1 artifact path | `foundry/broadcast/DeployArbitrumSepoliaPhase1.s.sol/421614/run-latest.json` |
 | Core artifact path | `foundry/broadcast/DeployFullSystemDirect.s.sol/421614/run-latest.json` |
 | M2M artifact path | `foundry/broadcast/DeployM2MSystem.s.sol/421614/run-latest.json` |
 
 | Contract | Address |
 | --- | --- |
-| `UnitRegistry` | `0x5a709d6f4F0a084315C64272FFc158Dc61F0De38` |
-| `FeeManager` | `0x51aB383A43d79f4127B7E7dCBcd892164FA2838F` |
-| `OrinaRWA` | `0x0a9efc1fb95be24743b1452ac4c974E5E925A453` |
-| `MarketplaceATP` | `0x6d132Ba2327573c4e6f97a2167dCddb8059C4d14` |
-| `PaymentGateway` | `0x1A880Ae46993282dd77C2dDCc5e36498eB616C92` |
-| `DisputeManager` | `0x952aE0562De695c63c1386458DB537193Ce293b4` |
-| `AutoTimeManager` | `0xa12273AD5b73c5F57139e84aa89Db52FE7Af05de` |
-| `RWAReceiptNFT` | `0x82d2f4e131d1EB34F9B6Ebc8CC37bdD1cca84e95` |
-| `ShippingRegistry` | `0x50fD56DcA706471B7f0Ab59051006aA2712c2DF2` |
-| `TimelockController` | `0x5C842728C357B9b18eb8A9A7a840499936132e67` |
-| `DelegationManager` | `0x52440e44ec34a64e19b92243262fe47819d65539` |
-| `AIWalletFactoryV2` | `0x7D6b498eDc3F469ED020116e8892EbB361753bCB` |
+| `UnitRegistry` | `0x37D917202211492523659e83010300A444D62C91` |
+| `FeeManager` | `0x0c4AccB88E2Cc530FEFBAb31Ca77371a2a68Ba20` |
+| `OrinaRWA` | `0x0244Ad5ca0BC9Cd8555352Cd53Dc51Fd8eD2f011` |
+| `MarketplaceATP` | `0x5863f25A8250EBe20Bd1E3d04FD796081Fc3D72E` |
+| `PaymentGateway` | `0x39F539903b75A0bF0FEF16a443904C8c9DF787EE` |
+| `DisputeManager` | `0xEE36B67BE61A37672D4ae041A89aEd12B333753E` |
+| `AutoTimeManager` | `0x75ac6efE7483c03B971Fb8E635dEE8ed8D527c61` |
+| `RWAReceiptNFT` | `0x6A695E8356b6F80664E31402038CbBdBCfffa816` |
+| `ShippingRegistry` | `0x63f85795fAc0F76831a3eB14Dc7729A4052fe7F7` |
+| `TimelockController` | `0x66Bf76Fdf268976080f119278982B082f417FbAD` |
+| `DelegationManager` | `0x56D454f55D5d05b060777F70e653BbBEb1167D2e` |
+| `AIWalletFactoryV2` | `0x143519194A9Df4678b602BEE329C1A96381d1CBD` |
 
-Arbitrum Sepolia starter-kit assets: `ORI=0xD87493f4C02aad2c67Ce12aa534d188Bf44FCcAB`, `USDT.t=0x11E6c8f2806b32dAC427E7Df07F67602647eF87A`, `USDC.t=0xD6E84789741Ea2DE727961cCB383454E4A845035`, `OrinaTestTokenFaucet=0xbbD53C18F4d9fb98AA6c4837ea0E8F221e1b5F0F`.
+Arbitrum Sepolia starter-kit assets: `ORI=0x5e41f1155AB4E614037C9C481BB8c1d398915cd0`, `USDT.t=0x279c62C97c6967d0E0F45f9D2460d38E3929c090`, `USDC.t=0x233Fb28c8166807b01DcBE2743bb85cF7cdC8b41`, `OrinaTestTokenFaucet=0xFA37557E4F6D066f6CF4B69BA865837d007c8D1e`.
 
-Pending governance call: target `0x6d132Ba2327573c4e6f97a2167dCddb8059C4d14`, function `setDelegationManager(address)`, calldata `0x1a8d0de200000000000000000000000052440e44ec34a64e19b92243262fe47819d65539`.
+Governance note: Arbitrum Sepolia uses deployer EOA `0x282Be18838D7079C215F49749a9606d77e00888b` as timelock proposer/executor/admin with zero delay for testnet only. Mainnet must redeploy with production multisig/Safe governance and replace these addresses.
 
 ## On-Chain Spot Checks
 
-Checked on 2026-06-28:
+Checked on 2026-06-29:
 
 - `MarketplaceATP`, `PaymentGateway`, and `DelegationManager` have deployed bytecode on BSC Testnet, Base Sepolia, and Arbitrum Sepolia.
-- BSC Testnet and Base Sepolia `MarketplaceATP.delegationManager()` return the listed DelegationManager.
-- Arbitrum Sepolia `MarketplaceATP.delegationManager()` is still zero until the pending governance call above is executed.
+- BSC Testnet, Base Sepolia, and Arbitrum Sepolia `MarketplaceATP.delegationManager()` return the listed DelegationManager.
 - Each DelegationManager grants `CONSUMER_ROLE` to its listed Marketplace.
-- Arbitrum Sepolia `DelegationManager.DEFAULT_ADMIN_ROLE` is held by its timelock, not the deployer EOA.
+- Arbitrum Sepolia `DelegationManager.DEFAULT_ADMIN_ROLE` is held by its timelock, not the deployer EOA; the timelock itself is EOA-controlled for testnet only.
