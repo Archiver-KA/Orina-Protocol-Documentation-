@@ -34,7 +34,7 @@ Version notes:
 
 | Field | Value |
 | --- | --- |
-| Deployment status | Contract stack deployed; runtime app writes remain on BSC Testnet. |
+| Deployment status | Contract stack deployed and write-enabled for testnet. |
 | Network | Base Sepolia |
 | Chain id | `84532` |
 | Explorer | https://sepolia.basescan.org |

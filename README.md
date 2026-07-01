@@ -89,6 +89,75 @@ Orina is not a marketplace, escrow provider, or payment gateway. It is a settlem
 | Glossary | [Glossary](./docs/reference/glossary.md) |
 | Official links | [Official Links](./docs/reference/official-links.md) |
 
+## Testnet Networks
+
+These addresses are public testnet deployments only. Do not use testnet tokens, faucets, or deployment admin roles in production. The detailed address sheet is [Testnet Deployment Addresses](./docs/runtime/testnet-deployment-addresses.md).
+
+### BSC Testnet
+
+Chain ID: `97`
+
+| Contract | Address |
+| --- | --- |
+| `UnitRegistry` | `0x4ea45450064CD5B7c88EcAaE6a145652FEDd5df0` |
+| `FeeManager` | `0xD32fc966835D8eb7D26A12BEcCa86c749A60eFb3` |
+| `OrinaRWA` | `0x3a591AB1aB3A281f999AAD1644b020CbEC463C47` |
+| `MarketplaceATP` | `0x18E1C8ab257FAf16Ec8257A9715d07661194150B` |
+| `PaymentGateway` | `0x082d75D8cA96C6e97B6b451Ad4857454A53D5C15` |
+| `DisputeManager` | `0xCD27B85e7EA6FB1FDC484ae9083286DdCC14DC21` |
+| `AutoTimeManager` | `0x5639792243617841800df8F1450B86223c3d86f4` |
+| `RWAReceiptNFT` | `0x16A35bdD00dCfb9010504FbD1b2B97e26bB315ca` |
+| `ShippingRegistry` | `0x16402c8C883a01dbfD2D7E58A46D3E9434396836` |
+| `TimelockController` | `0x5452CE749EDA1bE82132743AA224e7C86023A7F4` |
+| `DelegationManager` | `0xb27C8eCc266423dDA3323983Ae3a2eF691ed8a13` |
+| `AIWalletFactoryV2` | `0xD838268fa8dF6AFD1Fd79D9C0Fd243A3D23D0441` |
+
+Runtime payment tokens: `USDT=0x337610d27c682E347C9cD60BD4b3b107C9d34dDd`, `USDC=0x64544969ED7EBf5f083679233325356EbE738930`, `WBNB=0xae13d989dac2f0debff460ac112a837c89baa7cd`, `ORI=0x093969C2Bb194E7424534918eca5119fa72a61D6`.
+
+Starter kit: `OrinaTestTokenFaucet=0x6527262782C140e0A4724bef06431786556AfDE0`, `USDT.t=0x8800279B4a5528628ef069698169C58B89377809`, `USDC.t=0xbdcA834A71F5BFF1420eb5D1B0491d58a33141E5`.
+
+### Base Sepolia
+
+Chain ID: `84532`
+
+| Contract | Address |
+| --- | --- |
+| `UnitRegistry` | `0x5a709d6F4f0a084315C64272FfC158dc61F0de38` |
+| `FeeManager` | `0x51aB383A43d79f4127B7E7dCBcd892164FA2838F` |
+| `OrinaRWA` | `0x0a9EfC1fb95be24743B1452Ac4C974E5e925A453` |
+| `MarketplaceATP` | `0x6d132Ba2327573c4e6f97a2167dCddb8059C4d14` |
+| `PaymentGateway` | `0x1A880Ae46993282dD77C2Ddcc5e36498eb616c92` |
+| `DisputeManager` | `0x952ae0562de695C63C1386458db537193CE293b4` |
+| `AutoTimeManager` | `0xa12273Ad5B73c5F57139E84aa89db52fe7Af05De` |
+| `RWAReceiptNFT` | `0x82D2f4e131D1eB34f9B6ebc8CC37Bdd1CcA84E95` |
+| `ShippingRegistry` | `0x50fd56dca706471b7f0aB59051006AA2712C2DF2` |
+| `TimelockController` | `0x989b893118237f710b7Efc8820147B61c68DcaEE` |
+| `DelegationManager` | `0xFC0038B7CC628966f8a7f14414c9386c2d6cB288` |
+| `AIWalletFactoryV2` | `0x0E5E106A7F81233Fe07115Aeb3777e847adB09cB` |
+
+Starter kit: `ORI=0xd87493F4C02AAD2c67Ce12aa534d188Bf44FCCAB`, `USDT.t=0x11E6c8f2806b32DaC427E7dF07F67602647Ef87a`, `USDC.t=0xd6e84789741ea2DE727961CCB383454e4A845035`, `OrinaTestTokenFaucet=0xbBd53C18F4d9fb98aA6c4837Ea0E8F221E1B5F0F`.
+
+### Arbitrum Sepolia
+
+Chain ID: `421614`
+
+| Contract | Address |
+| --- | --- |
+| `UnitRegistry` | `0x37D917202211492523659e83010300A444D62C91` |
+| `FeeManager` | `0x0c4AccB88E2Cc530FEFBAb31Ca77371a2a68Ba20` |
+| `OrinaRWA` | `0x0244Ad5ca0BC9Cd8555352Cd53Dc51Fd8eD2f011` |
+| `MarketplaceATP` | `0x5863f25A8250EBe20Bd1E3d04FD796081Fc3D72E` |
+| `PaymentGateway` | `0x39F539903b75A0bF0FEF16a443904C8c9DF787EE` |
+| `DisputeManager` | `0xEE36B67BE61A37672D4ae041A89aEd12B333753E` |
+| `AutoTimeManager` | `0x75ac6efE7483c03B971Fb8E635dEE8ed8D527c61` |
+| `RWAReceiptNFT` | `0x6A695E8356b6F80664E31402038CbBdBCfffa816` |
+| `ShippingRegistry` | `0x63f85795fAc0F76831a3eB14Dc7729A4052fe7F7` |
+| `TimelockController` | `0x66Bf76Fdf268976080f119278982B082f417FbAD` |
+| `DelegationManager` | `0x56D454f55D5d05b060777F70e653BbBEb1167D2e` |
+| `AIWalletFactoryV2` | `0x143519194A9Df4678b602BEE329C1A96381d1CBD` |
+
+Starter kit: `ORI=0x5e41f1155AB4E614037C9C481BB8c1d398915cd0`, `USDT.t=0x279c62C97c6967d0E0F45f9D2460d38E3929c090`, `USDC.t=0x233Fb28c8166807b01DcBE2743bb85cF7cdC8b41`, `OrinaTestTokenFaucet=0xFA37557E4F6D066f6CF4B69BA865837d007c8D1e`.
+
 ## Formal Artifacts
 
 Curated ATP formal artifacts are stored under [artifacts/formal/atp](./artifacts/formal/atp/README.md):

@@ -210,14 +210,17 @@ Available at `artifacts/formal/atp/` in the public documentation repository:
 
 | Milestone | Status |
 |---|---|
-| ATP v3.4 deployed on BSC | ✅ Live |
-| Internal security audit completed | ✅ May 2026 |
-| Formal verification artifacts published | ✅ Public |
-| M2M delegation v1 (bounded agent support) | ✅ Live |
-| Public documentation repository | ✅ Published |
-| Arbitrum native deployment (ATP v3.5) | 🔄 In development |
-| Base + Coinbase KYC integration | 🗓 Q4 2026 |
-| Solana (Rust/Anchor) | 🗓 Q1–Q2 2027 |
+| ATP v3.5 BSC Testnet deployment | Complete |
+| Base Sepolia deployment | Complete |
+| Arbitrum Sepolia deployment | Complete |
+| Runtime App | Complete in Q2 2026 |
+| Internal security audit completed | May 2026 |
+| Formal verification artifacts published | Public |
+| M2M delegation v1 (bounded agent support) | Live |
+| Public documentation repository | Published |
+| Orbit Chain deployment | Q4 2026 |
+| ORI token public sale | Q4 2026 |
+| Mainnet, Mobile App, and Moonpay integration | Q1 2027 |
 
 ---
 
@@ -226,7 +229,7 @@ Available at `artifacts/formal/atp/` in the public documentation repository:
 | Priority | Allocation | Deliverable |
 |---|---|---|
 | Independent third-party audit | 40% | External audit of ATP v3.5 EVM expansion — prerequisite for institutional adoption |
-| Protocol development | 35% | Arbitrum native deployment, LayerZero V2 OFT, multichain ATP standardization |
+| Protocol development | 35% | Orbit Chain deployment, mainnet readiness, Mobile App milestones, Moonpay integration, and multichain ATP standardization |
 | Developer relations | 15% | SDK, integration guides, OTC and service marketplace partner onboarding |
 | Ecosystem grants | 10% | Grants for builders integrating Orina as settlement primitive in their applications |
 
@@ -236,9 +239,9 @@ Available at `artifacts/formal/atp/` in the public documentation repository:
 
 | Phase | Timeline | Goal | Audit Milestone |
 |---|---|---|---|
-| **Phase 1 — EVM Expansion** | Q3 2026 | ATP v3.5 on Arbitrum, LayerZero V2 OFT | Third-party audit of EVM contracts |
-| **Phase 2 — Base Deployment** | Q4 2026 | Native instance on Base, Coinbase KYC/AML for enterprise compliance | Identity + escrow flow audit |
-| **Phase 3 — SVM Expansion** | Q1–Q2 2027 | Full ATP rewrite in Rust/Anchor for Solana, extended bounded M2M | Anchor program audit |
+| **Phase 1 - Testnet Expansion** | Q3 2026 | BSC Testnet, Base Sepolia, and Arbitrum Sepolia complete; Orbit Chain scheduled for Q4 2026 | Third-party audit of EVM contracts |
+| **Phase 2 - Q4 Expansion** | Q4 2026 | Orbit Chain deployment and ORI token public sale | Governance, bridge, and escrow flow review |
+| **Phase 3 - Mainnet Readiness** | Q1 2027 | Mainnet protocol launch, Mobile App release milestones, and Moonpay integration | Production readiness and integration audit |
 
 ---
 
