@@ -11,7 +11,7 @@ The public Orina runtime app is available at:
 
 - https://app.orina.io/
 
-This page distinguishes the active public runtime from testnet deployment targets. The public runtime remains ATP v3.5 beta on BSC Testnet by default; Base Sepolia, Arbitrum Sepolia, and Ethereum Sepolia are deployed write-enabled testnet targets in the runtime network selector.
+This page distinguishes the active public runtime from testnet deployment targets. The public runtime remains ATP v3.5 beta on BSC Testnet by default; Base Sepolia, Arbitrum Sepolia, Ethereum Sepolia, and Optimism Sepolia are deployed write-enabled testnet targets in the runtime network selector.
 
 ## Current Runtime
 
@@ -130,6 +130,35 @@ Arbitrum Sepolia governance note: this testnet uses deployer EOA `0x282Be18838D7
 | Testnet faucet | `0xbbD53C18F4d9fb98AA6c4837ea0E8F221e1b5F0F` |
 
 Ethereum Sepolia governance note: this testnet uses deployer EOA `0x282Be18838D7079C215F49749a9606d77e00888b` as the timelock proposer, executor, canceller, and admin with zero delay, matching the temporary Arbitrum Sepolia path. Ethereum mainnet must redeploy with the production multisig/Safe, non-zero timelock delay, and a new address set.
+
+## Optimism Sepolia Contract Deployment
+
+| Field | Value |
+| --- | --- |
+| Deployment status | Contracts deployed, bytecode-checked, M2M-linked, and write-enabled for testnet. |
+| Network | Optimism Sepolia |
+| Chain id | `11155420` |
+| RPC URL | `https://optimism-sepolia-rpc.publicnode.com` |
+| Explorer | https://sepolia-optimism.etherscan.io |
+| Namespace | `orina-atp-v3.5-optimism-sepolia-eoa-testnet-20260701` |
+| Runtime app writes | Enabled for testnet only. |
+
+| Contract | Address |
+| --- | --- |
+| `MarketplaceATP` | `0x6d132Ba2327573c4e6f97a2167dCddb8059C4d14` |
+| `OrinaRWA` | `0x0a9efc1fb95be24743b1452ac4c974E5E925A453` |
+| `RWAReceiptNFT` | `0x82d2f4e131d1EB34F9B6Ebc8CC37bdD1cca84e95` |
+| `PaymentGateway` | `0x1A880Ae46993282dd77C2dDCc5e36498eB616C92` |
+| `FeeManager` | `0x51aB383A43d79f4127B7E7dCBcd892164FA2838F` |
+| `DisputeManager` | `0x952aE0562De695c63c1386458DB537193Ce293b4` |
+| `AutoTimeManager` | `0xa12273AD5b73c5F57139e84aa89Db52FE7Af05de` |
+| `UnitRegistry` | `0x5a709d6f4F0a084315C64272FFc158Dc61F0De38` |
+| `ShippingRegistry` | `0x50fD56DcA706471B7f0Ab59051006aA2712c2DF2` |
+| `TimelockController` | `0x5C842728C357B9b18eb8A9A7a840499936132e67` |
+| `DelegationManager` | `0x52440e44ec34a64e19b92243262fe47819d65539` |
+| `AIWalletFactoryV2` | `0x7D6b498eDc3F469ED020116e8892EbB361753bCB` |
+
+Optimism Sepolia governance note: this testnet uses deployer EOA `0x282Be18838D7079C215F49749a9606d77e00888b` as the timelock proposer, executor, canceller, and admin with zero delay, matching the temporary Ethereum Sepolia path. Optimism mainnet must redeploy with the production multisig/Safe, non-zero timelock delay, and a new address set.
 
 ## Core Contracts
 

@@ -12,7 +12,7 @@ This page describes the current technical implementation of that settlement core
 
 ## Current Public Runtime
 
-The current public runtime reference is ATP v3.5 beta on BSC Testnet by default, with Base Sepolia, Arbitrum Sepolia, and Ethereum Sepolia also deployed as write-enabled testnet targets. The primary EIP-712 order domain still uses `MarketplaceATP` version `3.4` for signature compatibility, and the public runtime app is documented in [Runtime App](../runtime/live-app.md).
+The current public runtime reference is ATP v3.5 beta on BSC Testnet by default, with Base Sepolia, Arbitrum Sepolia, Ethereum Sepolia, and Optimism Sepolia also deployed as write-enabled testnet targets. The primary EIP-712 order domain still uses `MarketplaceATP` version `3.4` for signature compatibility, and the public runtime app is documented in [Runtime App](../runtime/live-app.md).
 
 ## Settlement Flow
 
