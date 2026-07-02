@@ -200,6 +200,29 @@ Chain ID: `11155420`
 
 Starter kit: `ORI=0xD87493f4C02aad2c67Ce12aa534d188Bf44FCcAB`, `USDT.t=0x11E6c8f2806b32dAC427E7Df07F67602647eF87A`, `USDC.t=0xD6E84789741Ea2DE727961cCB383454E4A845035`, `OrinaTestTokenFaucet=0xbbD53C18F4d9fb98AA6c4837ea0E8F221e1b5F0F`.
 
+### Avalanche Fuji
+
+Chain ID: `43113`
+
+| Contract | Address |
+| --- | --- |
+| `UnitRegistry` | `0x5a709d6f4F0a084315C64272FFc158Dc61F0De38` |
+| `FeeManager` | `0x51aB383A43d79f4127B7E7dCBcd892164FA2838F` |
+| `OrinaRWA` | `0x0a9efc1fb95be24743b1452ac4c974E5E925A453` |
+| `MarketplaceATP` | `0x6d132Ba2327573c4e6f97a2167dCddb8059C4d14` |
+| `PaymentGateway` | `0x1A880Ae46993282dd77C2dDCc5e36498eB616C92` |
+| `DisputeManager` | `0x952aE0562De695c63c1386458DB537193Ce293b4` |
+| `AutoTimeManager` | `0xa12273AD5b73c5F57139e84aa89Db52FE7Af05de` |
+| `RWAReceiptNFT` | `0x82d2f4e131d1EB34F9B6Ebc8CC37bdD1cca84e95` |
+| `ShippingRegistry` | `0x50fD56DcA706471B7f0Ab59051006aA2712c2DF2` |
+| `TimelockController` | `0x5C842728C357B9b18eb8A9A7a840499936132e67` |
+| `DelegationManager` | `0x52440e44ec34a64e19b92243262fe47819d65539` |
+| `AIWalletFactoryV2` | `0x7D6b498eDc3F469ED020116e8892EbB361753bCB` |
+
+Starter kit: `ORI=0xD87493f4C02aad2c67Ce12aa534d188Bf44FCcAB`, `USDT.t=0x11E6c8f2806b32dAC427E7Df07F67602647eF87A`, `USDC.t=0xD6E84789741Ea2DE727961cCB383454E4A845035`, `OrinaTestTokenFaucet=0xbbD53C18F4d9fb98AA6c4837ea0E8F221e1b5F0F`.
+
+Governance note: Avalanche Fuji uses deployer EOA as timelock proposer/executor/admin with zero delay for testnet only. Avalanche-C mainnet must redeploy with production multisig/Safe governance, a non-zero timelock delay, and a fresh address set.
+
 ## Formal Artifacts
 
 Curated ATP formal artifacts are stored under [artifacts/formal/atp](./artifacts/formal/atp/README.md):
