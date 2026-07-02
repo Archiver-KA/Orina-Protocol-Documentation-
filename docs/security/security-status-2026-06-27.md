@@ -15,7 +15,7 @@ This document summarizes the current public security posture for the Orina ATP p
 - Echidna and Medusa pass against the ATP harness covering escrow conservation, asset conservation, tracked order terminality, and delegated identity properties.
 - Mythril runtime-bytecode analysis completed for `FeeManager`, `PaymentGateway`, and `MarketplaceATP`; source triage found no confirmed exploitable issue.
 - Certora remote proof passes for the initial `FeeManager` fee-cap scope.
-- BSC Testnet, Base Sepolia, Arbitrum Sepolia, Ethereum Sepolia, Optimism Sepolia, and Avalanche Fuji deployments are reconciled and spot-checked for bytecode plus Marketplace-to-DelegationManager wiring.
+- BSC Testnet, Base Sepolia, Arbitrum Sepolia, Ethereum Sepolia, Optimism Sepolia, Avalanche Fuji, and World Chain Sepolia deployments are reconciled and spot-checked for bytecode plus Marketplace-to-DelegationManager wiring. World Chain Sepolia must use active M2M `0x5e41f1155AB4E614037C9C481BB8c1d398915cd0` / `0x279c62C97c6967d0E0F45f9D2460d38E3929c090`; its first M2M pair is orphaned and must not be used.
 
 ## Manual Review Updates
 

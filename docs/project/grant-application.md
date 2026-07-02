@@ -216,6 +216,7 @@ Available at `artifacts/formal/atp/` in the public documentation repository:
 | Ethereum Sepolia deployment | Complete |
 | Optimism Sepolia deployment | Complete |
 | Avalanche Fuji deployment | Complete |
+| World Chain Sepolia deployment | Complete |
 | Runtime App | Complete in Q2 2026 |
 | Internal security audit completed | May 2026 |
 | Formal verification artifacts published | Public |
@@ -242,7 +243,7 @@ Available at `artifacts/formal/atp/` in the public documentation repository:
 
 | Phase | Timeline | Goal | Audit Milestone |
 |---|---|---|---|
-| **Phase 1 - Testnet Expansion** | Q3 2026 | BSC Testnet, Base Sepolia, Arbitrum Sepolia, Ethereum Sepolia, Optimism Sepolia, and Avalanche Fuji complete; Orbit Chain scheduled for Q4 2026 | Third-party audit of EVM contracts |
+| **Phase 1 - Testnet Expansion** | Q3 2026 | BSC Testnet, Base Sepolia, Arbitrum Sepolia, Ethereum Sepolia, Optimism Sepolia, Avalanche Fuji, and World Chain Sepolia complete; Orbit Chain scheduled for Q4 2026 | Third-party audit of EVM contracts |
 | **Phase 2 - Q4 Expansion** | Q4 2026 | Orbit Chain deployment and ORI token public sale | Governance, bridge, and escrow flow review |
 | **Phase 3 - Mainnet Readiness** | Q1 2027 | Mainnet protocol launch, Mobile App release milestones, and Moonpay integration | Production readiness and integration audit |
 
